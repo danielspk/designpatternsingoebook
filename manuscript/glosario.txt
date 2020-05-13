@@ -1,0 +1,17 @@
+# Glosario
+
+## Clase
+
+Las *clases* propias de la programación orientada a objetos se definirán como *tipos de datos* o *tipos*.
+
+## Objeto
+
+Los *objetos* propios de la programación orientada a objetos se definirán como *variables*.
+
+## Método
+
+Los *métodos de clases* propios de la programación orientada a objetos se definirán como *comportamientos de un tipo* o simplemento como *método* (de tipo).
+
+## Propiedad
+
+Las *propiedades de clases* propias de la programación orientada a objetos se definirán como *atributos de una estructura*.

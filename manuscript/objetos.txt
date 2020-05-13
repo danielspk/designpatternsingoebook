@@ -1,0 +1,301 @@
+{#poo_objetos}
+# Objetos
+
+A diferencia de lenguajes explícitamente orientados a objetos como *C++*, *Java*, *Smalltalk*, y *Python* entre otros, en *Go* no existen las clases, ni los objetos, ni las excepciones, ni la herencia de clases.
+
+Algunos, rápidamente podrían inferir que *Go* no es un lenguaje orientado a objetos. ¿Cómo puede existir un lenguaje orientado a objetos que no disponga de clases?. La pregunta que realmente debemos hacernos es: **¿Qué es la programación orientada a objetos?**.
+
+Los desarrolladores tenemos una tendencia natural a comparar las cosas. Entonces, por ejemplo, algunos podrían decir que dado que *Java* es académicamente reconocido como un lenguaje estrictamente orientado a objetos, y dado que ese lenguaje tiene entre otras características clases, objetos y herencia; como *Go* no las tiene, entonces no podría ser un lenguaje orientado a objetos.
+
+*¿Alguien alguna vez escuchó decir que Javascript es un lenguaje orientado a objetos?*. Existe una gran discusión sobre si lo es o no lo es - a fin de cuentas en *Javascript* tampoco hay clases ni herencia de la forma como la que la hay en *Java*. No obstante *Javascript* suele ser considerado un lenguaje orientado a objetos. *¿Porqué?*. Porque permite implementar ciertas características de la programación orientada a objetos.
+
+I> En ES6 se incorporan las clases en *Javascript* aunque con un soporte muy limitado en comparación con otros lenguajes orientados a objetos clásicos.
+
+Limitar el análisis a si un lenguaje es o no orientado a objetos por la sola existencia de la palabra reservada *"class"* sería absolutamente simplista e incorrecto. A modo de ejemplo, *Objective-C* define sus clases sin hacer uso de una palabra *"class"* y el propio lenguaje se define a sí mismo como proveedor de características orientadas a objetos.
+
+Las *clases* no caracterizan a los lenguajes orientados a objetos. Un lenguaje soporta el paradigma orientado a objetos si respeta los pilares propios de la programación orientada a objetos. - *se verán más adelante* -.
+
+Cada lenguaje es único y permite implementar el paradigma orientado a objetos de diversas maneras. Algunas comparaciones de ejemplo:
+
+- Herencia de clase
+  - Simple
+    - *Scala*
+    - *Smalltalk*
+  - Múltiple
+    - *Eifell*
+    - *C++*
+- Herencia de Interfaces
+  - Explícitas
+    - *C++ (mediante clases abstractas y métodos virtuales)*
+    - *Scala (mediante herencia simple de clase y/o traits)*
+    - *Eifell (mediante herencia simple/múltiple de clase)*
+  - Implícitas
+    - *Smalltalk*
+- Rasgos (*Traits*)
+  - Permite
+    - *Scala*
+    - *Smalltalk*
+    - *C++ (mediante templates)*
+  - No Permite
+    - *Eiffel*
+- Sobrecarga de Métodos
+  - Permite
+    - *Scala*
+    - *C++*
+  - No Permite
+    - *Smalltalk*
+    - *Eiffel*
+
+Como se puede apreciar lenguajes como *Scala*, *Eiffel*, *C++* y *Smalltalk* son muy distintos entre sí, pero todos ellos respetan el paradigma orientado a objetos.
+
+Al analizar a *Go*, debemos comparar qué características propias de la programación orientada a objetos se pueden implementar y no simplemente hacer una comparación de un lenguaje respecto de otro sólamente por la falta o no de ciertos atributos o características individuales.
+
+## Cómo es la POO en Go
+
+### Clases y Objetos
+
+En *Go* no existen clases ni objetos. Existen tipos de datos definidos por el usuario a los cuales se les pueden incorporar comportamientos. En una analogía con una clase, las propiedades pudieran ser los tipos de datos de una estructura, y los métodos las funciones o comportamientos asociados al tipo de dato.
+Ejemplo sobre una estructura:
+
+```go
+type Persona struct {
+    Nombre   string
+    Apellido string
+    Edad     int
+}
+
+func (p *Persona) Saludar() {
+   fmt.Printf("Nombre: %s, Apellido: %s, Edad: %d\n", p.Nombre, p.Apellido, p.Edad)
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/3uoR7qRs9eV>
+  
+
+Ejemplo sobre un tipo de dato especializado:
+
+```go
+type Int int
+
+func (n Int) EsMayorQue(n2 Int) bool {
+   return n > n2;
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/5WXUHGRBfn4>
+
+### Interfaces
+
+"La interfaz de un objeto no dice nada acerca de su implementación - distintos objetos son libres de implementar las peticiones de forma diferente -. Eso significa que dos objetos con implementaciones completamente diferentes pueden tener interfaces idénticas". [\[38\]](#recursos). *Go* cumple con esta característica de interfaces sin implementación. Lenguajes de programación tales como *Visual Basic .Net* o *Kotlin* definen sus interfaces de forma explícita. En *Go* las interfaces son implícitas ya que no existe ninguna palabra reservada o símbolo para tal fin (tal como `implements` en *Groovy* o `:` en *C#*). En *Go* cualquier tipo de dato que implemente todos los métodos de una interfaz, implícitamente la implementa. Este comportamiento es análogo al de algunos lenguajes de tipado dinámico, como *Python* o *Boo*, donde a esto se lo conoce como *Duck typing* (*"si camina como un pato y grazna como un pato, entonces debe ser un pato"* [\[54\]](#recursos)). En *Go* el compilador chequea forzosamente que se si referencia a un tipo de dato como una interface, este debe implementar todos sus comportamientos sin excepción.
+
+Ejemplo:
+
+```go
+type Felino interface {
+    Caminar()
+    Saltar()
+}
+
+type Leon struct {
+    Nombre string
+}
+
+func (t Leon) Caminar() {
+   fmt.Println("CAMINAR")
+}
+
+func (t Leon) Saltar() {
+   fmt.Println("SALTAR")
+}
+
+func SaltarYCaminar(felino Felino) {
+    felino.Saltar()
+    felino.Caminar()
+}
+
+leon := Leon{"Simba"}
+SaltarYCaminar(leon)
+```
+
+Ejecutar código: <https://play.golang.org/p/MD6D893_1KB>
+  
+
+Como se puede observar la función *SaltarYCaminar()* espera una variable de tipo *Felino* pero se le pasa una de tipo *Leon*. Como el tipo *Leon* implementar los métodos *Caminar()* y *Saltar()* implícitamente también es un *Felino*.
+
+### Los tres pilares de la programación orientada a objetos
+
+Los tres pilares de la programación orientada a objetos son la *herencia*, el *encapsulamiento* y el *polimorfismo*.
+
+#### Herencia
+
+Como ya se dijo, en *Go* no existe la herencia, o al menos no la herencia de clases como se la conoce en otros lenguajes tales como *Scala*, *Swift* o *Eiffel* por ejemplo.
+
+Los tipos de datos en *Go* permiten ampliar/modificar su comportamiento incrustando otros tipos dentro de él.
+Cada estructura incorpora los tipos de datos y comportamientos de la/s estructura/s incrustrada/s.
+
+Ejemplo:
+
+```go
+type Persona struct {
+    Nombre   string
+    Apellido string
+    Edad     int
+}
+
+type Empleado struct {
+    Persona
+    Legajo string
+}
+
+func (p *Persona) DatosBase() {
+   //...
+}
+
+func (e *Empleado) DatosAdicionales() {
+   //...
+}
+
+empleado := Empleado{
+    Persona{"Jose", "Sánchez", 33},
+    "A1234",
+}
+empleado.DatosBase()
+empleado.DatosAdicionales()
+```
+
+Ejecutar código: <https://play.golang.org/p/oW83TcMCzHp>
+  
+
+También es posible extender/reemplazar el comportamiento de la/s estructura/s incrustrada/s reescribiendo el/los comportamiento/s deseado/s.
+
+Ejemplo:
+
+```go
+type Empleado struct {
+   legajo string
+   ingreso string
+}
+
+func (e *Empleado) InformarIngreso() {
+   fmt.Printf("Mi legajo fue el %s.", e.ingreso)
+}
+
+func (e *Empleado) Presentarse() {
+   fmt.Printf("Mi legajo es %s.", e.legajo)
+}
+
+type Gerente struct {
+    Empleado
+}
+
+func (g *Gerente) Presentarse() {
+   g.Empleado.Presentarse()
+
+   fmt.Println(" Mi cargo es el de Gerente.")
+}
+
+gerente := Gerente{
+    Empleado{"A0001", "01-01-2020"},
+}
+gerente.Presentarse()
+gerente.InformarIngreso()
+```
+
+Ejecutar código: <https://play.golang.org/p/rBBwVyj9sjQ>
+  
+
+En *Go* entonces se manifiesta la herencia de interfaz. - *más información en el siguiente apartado de "Herencia / Composición"*.
+
+#### Encapsulamiento
+
+En *Go* no existen identificadores de privacidad tales como *public*, *protected* y *private* típicos de otros lenguajes de programación. *Go* encapsula tipos de datos y funciones a nivel de paquete en base a convenciones de nombres.
+Todos aquellos nombres que empiecen con mayúsculas serán accesibles (visibles) desde otros paquetes. Por el contrario, aquellos que comiencen con minúsculas serán privados.
+Esta es la razón por la que en el código fuente de paquetes y bibliotecas de *Go* hay tipos de datos y funciones que pueden comenzar con mayúsculas o minúsculas.
+
+```go
+// estructura pública
+type CuentaCorriente struct {
+    //...
+}
+
+// método privado
+func (cc CuentaCorriente) calcularIntereses() double {
+    //...
+}
+```
+
+#### Polimorfismo
+
+*Go* es polimórfico. Gracias a la herencia de interfaces se pueden asignar referencias en forma polimórfica. - *más información en el siguiente apartado de "Herencia / Composición"*.
+
+Ejemplo:
+
+```go
+type Figura interface {
+   Dibujar()
+}
+
+type Cuadrado struct {}
+
+func (c *Cuadrado) Dibujar() {
+   fmt.Println("Dibujando un Cuadrado.")
+}
+
+type Triangulo struct {}
+
+func (t *Triangulo) Dibujar() {
+    fmt.Println("Dibujando un Triángulo.")
+}
+
+func dibujarFigura(f Figura) {
+    f.Dibujar()
+}
+
+cuadrado := Cuadrado{}
+dibujarFigura(&cuadrado)
+
+triangulo := Triangulo{}
+dibujarFigura(&triangulo)
+```
+
+Ejecutar código: <https://play.golang.org/p/yWlSrH_aXZg>
+  
+
+En *Go* el polimorfismo se logra con la ayuda de interfaces.
+
+#### Método Estáticos
+
+Esta característica no es posible de replicar en *Go* dado que cada comportamiento asociado a un tipo de datos, sólo puede ser invocado cuando exista un referencia a dicho tipo. Se puede emular esta característica usando el paradigma procedimental del lenguaje. Si bien no es un comportamiento puramente orientado a objetos, se pueden lograr similares resultados.
+
+Ejemplo:
+
+```go
+package Modelos
+
+// estructura
+type CuentaCorriente struct {
+    //...
+}
+
+// emular propiedad estática
+// utilizando variable de paquete
+var banco = "Banco S.A."
+
+// emular método estático de CuentaCorriente 
+// utilizando una función de paquete
+func CuentaCorrienteGetBanco() string {
+    return banco
+}
+```
+
+## Qué dicen otros autores
+
+Según Gigi Sayfan [\[6\]](#recursos) "*Go* es una extraña mezcla de ideas antiguas y nuevas.", y "Muchas personas ni siquiera están seguras de si *Go* es un lenguaje orientado a objetos", sin embargo para el "*Go* es un lenguaje de programación orientado a objetos de buena fe. Permite el modelado basado en objetos y promueve las mejores prácticas de usar interfaces en lugar de tipos concretos de jerarquías. *Go* tiene algunas elecciones sintácticas inusuales, pero el trabajo general con tipos, métodos e interfaces parece simple, ligero y natural. La incrustación no es muy pura, pero aparentemente estaba en juego el pragmatismo, y se proporcionó una incrustación en lugar de sólo la composición por nombre".
+
+Para Junade Ali [\[39\]](#recursos) "La programación orientada a objetos es más que solo clases y objetos; es un paradigma de programación basado alrededor de objetos (estructuras de datos) que contienen campos de datos y métodos. Es esencial entender esto; el uso de clases para organizar un grupo de métodos no relacionados no es orientación a objetos".
+
+Incluso la propia gente que desarrolla *Go* responde a esta pregunta [\[3\]](#recursos) como "Si y no".
+
+## Mi punto de vista
+
+Ya que existen otros lenguajes que permiten programar orientado a objetos, sin ser realmente orientados a objetos, puedo decir que **"*Go* es un lenguaje no orientado a objetos que permite la programación orientada a objetos - aunque no de la forma tradicional"**.

@@ -1,0 +1,127 @@
+# Sobre Go
+
+{width: 28.5%}
+![](appenginegopher.jpg)
+C> *Imagen* - [\[49\]](#recursos)
+
+"*Go* es un lenguaje de programación de código abierto que facilita la creación de software simple, confiable y eficiente". [\[1\]](#recursos)
+
+"*Go* es expresivo, conciso, limpio y eficiente. Sus mecanismos de concurrencia facilitan la escritura de programas que aprovechan al máximo las máquinas multinúcleo, y de red, mientras que su novedoso sistema de tipo permite la construcción de programas flexibles y modulares. Go compila rápidamente el código de máquina y tiene la comodidad de la recolección de basura y el poder de la reflexión en tiempo de ejecución. Es un lenguaje compilado, rápido, de tipado estático, que se siente como un lenguaje interpretado de tipado dinámico". [\[2\]](#recursos)
+
+## Orígenes
+
+*Go* fue creado en Google en el año 2007 por *Robert Griesemer*, *Rob Pike*, y *Ken Thomson*.
+
+{width: 24.0%}
+![](gopher.png)
+C> *Imagen* - [\[50\]](#recursos)
+
+Su lanzamiento oficial fue en noviembre del año 2009, pero su primera versión estable - 1.0 - recién se publicó en marzo de 2012.
+
+Originalmente fue concebido para resolver problemas propios de la infraestructura de software de Google. Según palabras de unos de sus creadores Rob Pike, "Los objetivos del proyecto Go fueron eliminar la lentitud y la torpeza del desarrollo de software en Google y, por lo tanto, hacer que el proceso sea más productivo y escalable. El lenguaje fue diseñado por y para las personas que escriben, leen, depuran y mantienen sistemas de software grandes. Por lo tanto, el propósito de Go no fue investigar el diseño de un lenguaje de programación; sino mejorar el entorno de trabajo para sus diseñadores y sus compañeros de trabajo. Go tiene más que ver con la ingeniería del software que con la investigación en un lenguaje de programación" [\[17\]](#recursos).
+
+Entre los principales problemas de Google que motivaron el desarrollo de Go se pueden destacan:
+
+- los largos tiempos de compilación
+- las dependencias no controladas
+- las variaciones de uso de subconjuntos diferentes de un lenguaje por parte de los desarrolladores
+- los códigos difíciles de leer
+- los códigos mal documentados
+
+## Sobre su nombre
+
+Dado que la palabra `Go` es parte del idioma ingles el lenguaje también es conocido como *Golang*.
+
+I> Se recomienda utilizar el término *Golang* al realizar búsquedas en internet referidas al lenguaje.
+
+## Características
+
+*Go* está inspirado en la sintaxis de *C* como otros lenguajes: *C++*, *C#*, *Java*, *PHP*, *Javascript*, etc.
+
+Su elección fue ser afin a la gran comunidad de desarrolladores de *C++* de Google.
+
+Por sus características suele clasificarse como un lenguaje compilado que tiene características de lenguajes interpretados.
+
+{width: 33.0%}
+![](govsother.png)
+C> *Imagen* - [\[25\]](#recursos)
+
+Para *Rob Pike*: "*Go* es un intento de combinar la seguridad y el rendimiento de un lenguaje de tipado estático con la expresividad y la comodidad de un lenguaje interpretado de tipo dinámico." [\[25\]](#recursos)
+
+*Go* se caracteriza por ser un lenguaje:
+
+- compilado,
+- concurrente,
+- de tipado estático,
+- con recolector de basura,
+- con uso de punteros - pero sin aritmética
+- con cortos tiempos de compilación
+
+Se destaca también por su diseño minimalista y su facilidad para aprenderlo. A modo de comparación mientras otros lenguajes tienen muchas palabras reservadas, *C++ 20* tiene 96, *C# 7* tiene 78, *Java 13* tiene 51; *Go* sólo tiene 25.
+
+### Ejemplo
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("www.designpatternsingo.com")
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/vhgR-fZxZv6>
+  
+
+### Según otros Autores
+
+Para Mark Summerfield [\[36\]](#recursos) "*Go* es bastante parecido a *C* en su espíritu, ya que es un lenguaje pequeño y eficiente con convenientes facilidades de bajo nivel, como punteros. Sin embargo, *Go* también ofrece muchas características asociadas con lenguajes de alto o muy alto nivel, como cadenas Unicode, potentes estructuras de datos integradas, duck typing, recolección de basura y soporte de concurrencia de alto nivel que utiliza comunicaciones en lugar de datos compartidos y bloqueos. *Go* también tiene una gran biblioteca estándar de amplio rango".
+
+Para Shiju Varghese [\[28\]](#recursos) "El lenguaje de programación *Go* se puede describir simplemente en tres palabras: simple, mínimo y pragmático. El objetivo del diseño de *Go* es ser un lenguaje de programación simple, minimalista y expresivo que proporcione todas las características esenciales para crear sistemas de software confiables y eficientes. Cada idioma tiene su propio objetivo de diseño y una filosofía única. La simplicidad no se puede agregar más adelante en el idioma, por lo que debe ser construida con la simplicidad en mente. *Go* está diseñado para ser simple. Al combinar la simplicidad y el pragmatismo de *Go*, puede construir sistemas de software altamente eficientes con un mayor nivel de productividad".
+
+Para Karl Seguin [\[20\]](#recursos) "*Go* tiene la naturaleza de simplificar la complejidad que hemos visto incluida en los lenguajes de programación en el último par de décadas mediante el uso de varios mecanismos".
+
+Para Caleb Doxsey [\[41\]](#recursos) "*Go* es un lenguaje de programación de propósito general con características avanzadas y una sintaxis limpia. Debido a su amplia disponibilidad en una variedad de plataformas, su robusta biblioteca standard bien documentada y su enfoque en buenos principios de la ingeniería del software, *Go* es un gran lenguaje de programación para aprender".
+
+## Controversias
+
+*Go* como todos los lenguajes de programación presenta ciertas controversias. Sus detractores por ejemplo manifiestan que el lenguaje carece de:
+
+- genéricos
+- manejo de excepciones
+- sobrecarga de operadores
+
+D> En el siguiente link puede acceder a una serie de artículos, de diferentes autores, destinados a detallar y debatir sobre las debilidades que encuentran en el lenguaje *Go* - <https://github.com/ksimka/go-is-not-good> [\[16\]](#recursos). Varios de los argumentos son bastantes graciosos desde mi punto de vista: por ejemplo algunos critican la mascota del lenguaje, o se quejan de que es un lenguaje compilado, o que su sintaxis es del estilo de *C*.
+
+No obstante el equipo de diseño de *Go* no es ajeno a estas críticas, y permite que se propongan nuevas funcionalidades. Para esto se deben completar una serie de pasos que se encuentran documentados en el siguiente link: <https://github.com/golang/proposal>.
+
+*Go* trata de respetar su filosofía de mantener un lenguaje extremadamente simple y rápido de compilar, por lo que la incorporación de nuevas características que pudieran afectar a uno de estos dos puntos debe poder justificarse claramente, y no debe existir forma alguna de poder llevar a cabo esa tarea con las características actuales del lenguaje. Por ejemplo estas son algunas respuestas que la documentación de *Go* da sobre la no existencia de excepciones:
+
+"En *Go*, el manejo de errores es importante. El diseño y las convenciones del idioma lo alientan a verificar explícitamente si ocurren errores (a diferencia de la convención en otros idiomas de arrojar excepciones y, a veces, capturarlas). En algunos casos, esto hace que código de *Go* sea verboso, pero afortunadamente hay algunas técnicas que puede utilizar para minimizar el manejo de errores repetitivos." [\[5\]](#recursos)
+
+"Creemos que acoplar excepciones a una estructura de control como en el try-catch-finally, da como resultado un código intrincado. También tiende a alentar a los programadores a etiquetar demasiados errores comunes, como no abrir un archivo, como excepcionales. *Go* toma un enfoque diferente. Para el manejo simple de errores, los retornos multi-valor de *Go* facilitan el reporte de un error sin sobrecargar el valor de retorno. Un tipo de error canónico, junto con otras características de *Go*, hace que el manejo de errores sea agradable, pero bastante diferente del de otros lenguajes." [\[3\]](#recursos)
+
+Esta filosofía para algunos controvertida es la que creo en mi opinión que hace a *Go* tan interesante. En vez incorporar constantemente nuevas características y/o copiar otras de otros lenguajes de programación, *Go* intenta mantener un lenguaje simple, mínimo y conciso.
+
+## Proverbios de *Go*
+
+Los proverbios de *Go* invitan a los desarrolladores a reflexionar sobre la filosofía de *Go* y a la enseñanza sobre el lenguaje.
+
+Se invita a los lectores a profundizar más sobre esta filosofía en base a la charla de *Rob Pike* en el Gopherfest del año 2015: "*Go* Proverbs". [\[44\]](#recursos)
+
+A continuación se exponen sólo algunos de estos proverbios:
+
+- No se comunique compartiendo memoria, comparta memoria comunicándose.
+- La concurrencia no es paralelismo.
+- Cuanto más grande es la interfaz, más débil es la abstracción.
+- Haz que el valor cero sea útil.
+- *interface{}* no dice nada.
+- El estilo de *gofmt* no es el favorito de nadie, sin embargo, *gofmt* es el favorito de todos.
+- Copiar un poco es mejor que una pequeña dependencia.
+- Claro es mejor que inteligente.
+- La reflexión nunca es clara.
+- Los errores son valores
+- No solo revise los errores, trátelos con gracia.
+
+Puede acceder al listado completo y actualizado en <https://go-proverbs.github.io>.

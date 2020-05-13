@@ -1,0 +1,3 @@
+# Parte II #
+
+### Patrones de Diseño GoF en *Go*

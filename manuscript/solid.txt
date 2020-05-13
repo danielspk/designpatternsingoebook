@@ -1,0 +1,309 @@
+{#poo_solid}
+# S.O.L.I.D
+
+SOLID es un acrónimo introducido por Robert C. Martin en su libro "Agile Software Development, Principles, Patterns and Practices" [\[40\]](#recursos) y hace referencia a los siguientes cinco principios:
+
+- **S**: *(SRP - Single responsibility principle)* Principio de responsabilidad única.
+- **O**: *(OCP - Open closed principle)* Principio abierto cerrado.
+- **L**: *(LSP - Liskov substitution principle)* Principio de substitución de Liskov.
+- **I**: *(ISP - Interface segregation principle)* Principio de segregación de la interfaz.
+- **D**: *(DIP - Dependency inversion principle)* Principio de inversión de la dependencia.
+
+El objetivo de aplicar estos principios es obtener sistemas orientados a objetos con código de mayor calidad, facilidad de mantenimiento y mejores oportunidades de reuso de código.
+
+### Principio de responsabilidad única
+
+I> Una clase debe tener una, y sólo una, razón para cambiar, lo que significa que una clase debe tener un solo trabajo.
+
+La primera observación respecto de este principio es que en *Go* no existen clases. Sin embargo, como vimos mediante la incorporación de comportamientos a tipos de datos, podemos llegar a un concepto equivalente.
+
+Este principio hace foco en que un objeto debe tener únicamente una responsabilidad encapsulada por la clase. Cuando se hace referencia a una responsabilidad es para referirse a una razón para cambiar.  
+Mantener una clase que tiene múltiples objetivos o responsabilidades es mucho más complejo que una clase enfocada en una única responsabilidad.
+
+El siguiente ejemplo no cumple con éste principio ya que otorga a una estructura dos responsabilidades bien diferenciadas: *guardar en un archivo local* y *guardar en una base de datos*.
+
+```go
+package main
+
+type Documento struct {
+    Nombre  string
+}
+
+func (d *Documento) GuardarEnArchivo() {
+   // ...
+}
+
+func (d *Documento) GuardarEnBaseDatos() {
+   // ...
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/1d5JvLzQTEH>
+  
+
+Un *Documento* debería saber cómo acceder al sistema de archivos local y a la vez como conectarse y operar contra una base de datos. Implementar ambas acciones en una misma estructura genera un alto acoplamiento.
+
+Creando estructuras con responsabilidades bien definidas se puede mejorar el código de la siguiente manera:
+
+```go
+package model
+
+type Documento struct {
+    Nombre  string
+}
+```
+
+```go
+package store
+
+import "model"
+
+type GuardadorDocumento interface {
+    Guardar(d model.Documento)
+}
+
+type GuardadorDocumentoArchivo struct {
+    Path  string
+}
+
+func (gda GuardadorDocumentoArchivo) Guardar(d model.Documento) {
+   // ...
+}
+
+type GuardadorDocumentoBaseDatos struct {
+    StringConnection  string
+}
+
+func (gdbd GuardadorDocumentoBaseDatos) Guardar(d model.Documento) {
+   // ...
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/nxRPMtLbWP2>
+  
+
+**¿Qué pasa en *Go*:** Gracias a la organización en paquetes que permite *Go* es posible crear estructuras, tipos, funciones y métodos empaquetados con propositos claros y bien definidos.
+
+### Principio abierto cerrado
+
+I> Los objetos o entidades deberían estar abiertos para la extensión, pero cerrados para su modificación.
+
+Este principio propone que una entidad esté cerrada, lista para ser usada y estable en su calidad e interfaces, y al mismo tiempo abierta, es decir, que permita extender su comportamiento (pero sin modificar su código fuente).
+
+Imaginemos que se requiere cambiar el comportamiento de la siguiente estructura únicamente en uno de sus métodos:
+
+```go
+type Animal struct {
+    Nombre  string
+}
+
+func (a Animal) Caminar() {
+    // ...
+}
+
+func (a Animal) Saltar() {
+    // ...
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/FP80Iem9qqV>
+  
+
+Podemos hacerlo de la siguiente forma:
+
+```go
+type AnimalModificado struct {
+    Animal
+}
+
+func (am AnimalModificado) Caminar() {
+    // ...
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/Sf1WkRugRN3>
+  
+
+**¿Qué pasa en *Go*:** Gracias a la composición que permite *Go* es posible componer tipos simples en más complejos manteniendo la interfaz del tipo original.
+
+### Principio de substitución de Liskov
+
+I> Cada clase que herede de otra debe poder utilizarse como su clase padre sin necesidad de conocer las diferencias que pudieran existir entre ellas.
+
+Este principio propone que el contrato de una clase base debe ser honrado por sus clases derivadas para que instancias de las clases derivadas puedan reeamplazar a instancias de la clase base.
+
+Veamos el siguiente código:
+
+```go
+type RespuestaJSON struct {}
+
+func (r RespuestaJSON) Imprimir() {
+    // ...
+}
+
+type RespuestaHTML struct {}
+
+func (r RespuestaHTML) Imprimir() {
+    // ...
+}
+
+type Emision struct {}
+
+func (e Emision) EmitirJSON(r RespuestaJSON) {
+    // ...
+}
+
+func (e Emision) EmitirHTML(r RespuestaHTML) {
+    // ...
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/4jwdJ0NUjOe>
+  
+
+La estructura *Emision* debe implementar dos comportamientos ya que debe poder gestionar impresiones en HTML y JSON. Si a futuro se requiriera de otro tipo de impresión - *xml por ejemplo* - se debería modificar su código fuente.
+
+La siguiente modificación permite intercambiar cualquier tipo de respuesta para su impresión:
+
+```go
+type Respuesta interface {
+    Imprimir()
+}
+
+type RespuestaJSON struct {}
+
+func (r RespuestaJSON) Imprimir() {
+    // ...
+}
+
+type RespuestaHTML struct {}
+
+func (r RespuestaHTML) Imprimir() {
+    // ...
+}
+
+type Emision struct {}
+
+func (e Emision) Emitir(r Respuesta) {
+    // ...
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/ZJ0iEXpWgt4>
+  
+
+**¿Qué pasa en *Go*:** Al definir firmas de métodos a traves de interfaces, y no mediante tipos concretos, es posible utilizar cualquier tipo que respete implícitamente la interfaz.
+
+### Principio de segregación de la interfaz
+
+I> Nunca se debe obligar a un cliente a implementar una interfaz que no utilice, o no se debe forzar a los clientes a depender de métodos que no usan.
+
+Este principio hace foco en como deben definirse las interfaces. Las mismas deben ser pequeñas y específicas.  
+Grandes y complejas interfaces obligan al cliente a implementar métodos que no necesita.
+
+Veamos la siguiente interface:
+
+```go
+type Boton interface {
+    OnClick()
+    OnDobleClick()
+}
+
+type BotonLogin struct {}
+
+func (b BotonLogin) OnClick() {
+    // ...
+}
+
+func (b BotonLogin) OnDobleClick() {
+    // vacio
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/FHu4-lVUJ2D>
+  
+
+Como puede verse la interface *Boton* obliga a implementar ambos comportamientos en sus clientes cuando es muy factible que no todos ellos deban implementar ambas opciones.
+
+Una solución podría ser la siguiente:
+
+```go
+type OnClickListener interface {
+    OnClick()
+}
+
+type OnDobleClickListener interface {
+    OnDobleClick()
+}
+
+type BotonLogin struct {}
+
+func (b BotonLogin) OnClick() {
+    // ...
+}
+
+type BotonIcono struct {}
+
+func (b BotonIcono) OnDobleClick() {
+    // ...
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/umwCkd0*eKQ>
+  
+
+**¿Qué pasa en *Go*:** En *Go* puede aplicarse este concepto aislando el comportamiento requerido utilizando interfaces más pequeñas.
+
+### Principio de inversión de la dependencia
+
+I> Los módulos de alto nivel no deben depender de módulos de bajo nivel. Ambos deberían depender de abstracciones. Las abstracciones no deben depender de los detalles. Los detalles deben depender de las abstracciones.
+
+Este principio esta basado en reducir las dependencias entre los módulos del código para atacar el alto acoplamiento.
+
+Veamos la siguiente ejemplo:
+
+```go
+type B struct {}
+
+func (b B) Saludar() {
+    // ...
+}
+
+type A struct {
+    B
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/ANqhCiBv3Zr>
+  
+
+Como puede verse el tipo A depende del tipo B por lo que si el tipo B es modificado afectará al tipo A.
+
+Una solución podría ser la siguiente:
+
+```go
+type Saludador interface {
+    Saludar()
+}
+
+type B struct {}
+
+func (b B) Saludar() {
+    // ...
+}
+
+type A struct {
+    Saludador
+}
+```
+
+Ejecutar código: <https://play.golang.org/p/pHDUY3VCNTI>
+  
+
+**¿Qué pasa en *Go*:** Componer tipos mediante interfaces, y no mediante tipos concretos, permite evitar una fuerte dependencia entre tipos.
+
+## Conclusión
+
+Si bien el libro de Robert C. Martin [\[40\]](#recursos) tiene más de una decada y media y hace referencia a lenguajes propiamente orientados a objetos, vimos como también pueden aplicarse esos principios en *Go*.
+
+Como se vio en el apartado anterior, el poder de la composición y de las interfaces implícitas le permiten a *Go* implementar buenas prácticas y conceptos propios de la programación orientada a objetos.

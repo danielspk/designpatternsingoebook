@@ -1,0 +1,13 @@
+# POO en *Go*
+
+{width: 22.0%}
+![](project.png)
+C> *Imagen* - [\[49\]](#recursos)
+
+Este apartado tratará de dar respuesta a la siguiente pregunta: **¿Es *Go* un lenguaje orientado a objetos?**.
+
+### Contenido
+
+- [Objetos en *Go*](#poo_objetos)
+- [Herencia vs Composición en *Go*](#poo_herencia)
+- [Principios S.O.L.I.D en *Go*](#poo_solid)
