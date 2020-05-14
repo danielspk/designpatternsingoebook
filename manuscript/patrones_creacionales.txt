@@ -1,6 +1,7 @@
+{#patrones_creacionales}
 # Patrones Creacionales
 
-{width: 15.0%}
+{width: 13.0%}
 ![](doc.png)
 C> *Imagen* - [\[49\]](#recursos)
 

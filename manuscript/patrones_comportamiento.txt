@@ -1,6 +1,7 @@
+{#patrones_comportamiento}
 # Patrones de Comportamiento
 
-{width: 15.0%}
+{width: 13.0%}
 ![](doc.png)
 C> *Imagen* - [\[49\]](#recursos)
 

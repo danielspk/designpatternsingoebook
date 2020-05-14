@@ -1,6 +1,6 @@
 # Patrones de Diseño
 
-{width: 15.0%}
+{width: 13.0%}
 ![](pkg.png)
 C> *Imagen* - [\[49\]](#recursos)
 
@@ -21,7 +21,7 @@ En las siguientes secciones se detallará como es posible implementar dichos pat
 
 ## Contenido
 
-- [Patrones de Diseño GoF](#gof.md)
+- [Patrones de Diseño GoF](#gof)
 - [Patrones de Comportamiento](#patrones_comportamiento)
 - [Patrones Creacionales](#patrones_creacionales)
 - [Patrones Estructurales](#patrones_estructurales)
