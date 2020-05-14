@@ -8,7 +8,7 @@ Esta publicación fue motivada como trabajo final de mi Posgrado de Especializac
 ![](uca.png)
 C> *Imagen* - [\[53\]](#recursos)
 
-A lo largo de los últimos 10 años vengo desarrollando software principalmente orientado a objetos. En uno de mis últimos proyectos debimos analizar un cambio en el lenguaje de programación que utilizábamos ya que uno de los principales atributos de calidad que debía cumplir el nuevo software era la eficiencia; por esto era fundamental que el software fuera lo más rápido posible. Si bien es un análisis muy pobre el analizar que tan rápido puede ser un software sólo mirando con que lenguaje de programación es desarrollado, esta era una oportunidad que como equipo teníamos para explorar nuevos lenguajes. Luego de varias pruebas y discusiones quedaron dos candidatos finales: *Go* (<https://golang.org/>) y *Rust* (<https://www.rust-lang.org/en-US/>). La paradoja de esta historia es que al final el proyecto se terminó realizando en *Node.js* (<https://nodejs.org/en/>). Las razones escapan a esta publicación, sin embargo una de ellas tuvo un fuerte impacto es esa decisión: *"cómo transferir el conocimiento orientado a objetos que posee el grupo de desarrolladores a estos lenguajes que no son puramente orientados a objetos, o no de igual manera como lo conocen los desarrolladores de Java, C\#, PHP, etc"*. Anteriormente decía que la elección de *Node.js* fue una paradoja porque quien alguna vez ha desarrollado en *Javascript* sabrá las limitaciones que posee su orientación a objetos y de las grandes discusiones que hay en la comunidad sobre si *Javascript* es realmente un lenguaje orientado a objetos u orientado a prototipos. Esta es la razón principal de esta publicación, la de poder ayudar a un futuro equipo de tecnología a que puedan visualizar como es la Programación Orientada a Objetos en *Go* partiendo de los ya clásicos Patrones de Diseño GoF.
+A lo largo de los últimos 10 años vengo desarrollando software principalmente orientado a objetos. En uno de mis últimos proyectos debimos analizar un cambio en el lenguaje de programación que utilizábamos porque uno de los principales atributos de calidad que debía cumplir el nuevo software era la eficiencia; por esto era fundamental que el software fuera lo más rápido posible. Si bien es un análisis muy pobre el analizar que tan rápido puede ser un software únicamente mirando con que lenguaje de programación es desarrollado, esta era una oportunidad que como equipo teníamos para explorar nuevos lenguajes. Luego de varias pruebas y discusiones quedaron dos candidatos finales: *Go* (<https://golang.org/>) y *Rust* (<https://www.rust-lang.org/en-US/>). La paradoja de esta historia es que al final el proyecto se terminó realizando en *Node.js* (<https://nodejs.org/en/>). Las razones escapan a esta publicación, sin embargo una de ellas tuvo un fuerte impacto es esa decisión: *"cómo transferir el conocimiento orientado a objetos que posee el grupo de desarrolladores a estos lenguajes que no son puramente orientados a objetos, o no de igual manera como lo conocen los desarrolladores de Java, C\#, PHP, etc"*. Anteriormente decía que la elección de *Node.js* fue una paradoja porque quien alguna vez ha desarrollado en *Javascript* sabrá las limitaciones que posee su orientación a objetos y de las grandes discusiones que hay en la comunidad sobre si *Javascript* es realmente un lenguaje orientado a objetos u orientado a prototipos. Esta es la razón principal de esta publicación, la de poder ayudar a un futuro equipo de tecnología a que puedan visualizar como es la Programación Orientada a Objetos en *Go* partiendo de los ya clásicos Patrones de Diseño GoF.
 
 ### El trabajo
 
@@ -18,7 +18,7 @@ El trabajo presentado se denomina:
 
 El mismo se presenta como:
 
-> "El objetivo principal del presente trabajo será mostrar cómo pueden aplicarse los Patrones de Diseño GoF en un lenguaje de programación que no es completamente orientado a objetos. Para esto se utilizará como referencia el lenguaje de programación *Go*. Su propósito principal será servir de material de referencia para desarrolladores *Go* que deseen aplicar los patrones de Diseño GoF. Se analizará la viabilidad, los ajustes, y las adaptaciones necesarias para implementar los Patrones de Diseño en base a las características del lenguaje de programación *Go*. Para esto, previamente se abordarán y explicarán los atributos orientados a objetos que posee el lenguaje de programación *Go*. Adicionalmente el trabajo se publicará como e-book online mediante la realización de una página web, junto a ejemplos autoejecutables y un repositorio público con todo el código fuente, ejemplos y diagramas desarrollados."
+> "El objetivo principal del presente trabajo será mostrar cómo pueden aplicarse los Patrones de Diseño GoF en un lenguaje de programación que no es completamente orientado a objetos. Para esto se utilizará como referencia el lenguaje de programación *Go*. Su propósito principal será servir de material de referencia para desarrolladores *Go* que deseen aplicar los patrones de Diseño GoF. Se analizará la viabilidad, los ajustes, y las adaptaciones necesarias para implementar los Patrones de Diseño en base a las características del lenguaje de programación *Go*. Para esto, previamente se abordarán y explicarán los atributos orientados a objetos que posee el lenguaje de programación *Go*. Adicionalmente el trabajo se publicará como e-book online mediante la realización de una página web, junto a ejemplos auto ejecutables y un repositorio público con todo el código fuente, ejemplos y diagramas desarrollados."
 
 ### Porqué *Go*
 
@@ -28,7 +28,7 @@ Tiobe es una empresa especializada en la evaluación y el seguimiento de la cali
 
 > El proceso de como Tiobe confecciona el índice se encuentra bien detallado en el siguiente link: <https://www.tiobe.com/tiobe-index/programming-languages-definition/>
 
-Basándome en el índice antes mencionado realice una comparación entre ambos lenguajes y *Go*, tanto históricamente como actualmente, tiene mayor popularidad respecto de *Rust*.
+Basándome en el índice antes mencionado realicé una comparación entre ambos lenguajes y *Go*, tanto históricamente como actualmente, tiene mayor popularidad respecto de *Rust*.
 
 Como se puede apreciar en la siguiente gráfica *(Mayo/2018)* *Go* obtuvo su mejor ubicación dentro del ranking en Julio de 2017 al ubicarse entre los primeros 10 lenguajes de programación. Desde mediados de 2016 a mediados de 2017 tuvo su mayor pico de popularidad, con un marcado descenso actualmente.
 
@@ -40,7 +40,7 @@ Actualmente *(Mayo/2018)* *Go* se ubica en la 14ª posición:
 {width: 90.0%}
 ![](indextiobe201805.png)
 
-Por el contrario *Rust* se ubica actualmente *(Mayo/2018)* en la 91ª posición en una clara caida dentro del ranking. Si bien por su posición actual sus estadísticas ya no se publican dentro del índice Tiobe, al momento de su evaluación estaba dentro del ranking de los 20ª a 50ª.
+Por el contrario *Rust* se ubica actualmente *(Mayo/2018)* en la 91ª posición en una clara caída dentro del ranking. Si bien por su posición actual sus estadísticas ya no se publican dentro del índice Tiobe, al momento de su evaluación estaba dentro del ranking de los 20ª a 50ª.
 
 I> Las estadísticas registradas de Tiobe corresponden a Mayo del 2018. Consulte el Índice Tiobe [\[51\]](#recursos) para tener datos más actualizados.
 
@@ -50,7 +50,7 @@ En conclusión, el historial de popularidad de *Go* respecto de *Rust* fue lo qu
 
 ### El camino recorrido
 
-Antes de formalizar la idea final de esta publicación me defini dos objetivos para evaluar la factibilidad de su realización:
+Antes de formalizar la idea final de esta publicación me definí dos objetivos para evaluar la factibilidad de su realización:
 
 - hacer un muestreo de cuatro o cinco patrones GoF aleatoriamente con el fin de analizar si se podían implementar "semánticamente" en *Go*.
 - analizar si esas implementaciones realmente podían aportar valor al software.
@@ -96,9 +96,9 @@ transportista.setStrategy(new EmpresaB())
 console.log("Tasa Empresa B: " + transportista.calcularTasa());
 ```
 
-Semánticamente la aplicación del patrón es correcta. El contexto es el *Transportista* y las estrategias son las *Empresas*. Sin embargo esta implementación es exclusivamente semantica, porque el lenguaje:
+Semánticamente la aplicación del patrón es correcta. El contexto es el *Transportista* y las estrategias son las *Empresas*. Sin embargo esta implementación es exclusivamente semántica, porque el lenguaje:
 
-- no tiene forma de validar que lo que se este pasando al *Transportista* séa una *Estrategia* válida.
+- no tiene forma de validar que lo que se esté pasando al *Transportista* sea una *Estrategia* válida.
 - no tiene forma de implementar una *interface Estrategia* o *heredar* de una *clase Estrategia*.
 - no permite generar código reutilizable en paquetes o namespaces.
 - el *Contexto* no es autodocumentable a nivel código fuente ya que su función *setStrategy* espera cualquier tipo de variable y no un *objeto* de tipo *Estrategia*.
@@ -137,8 +137,8 @@ La motivación de la elección de estas, y no otras herramientas, fue la siguien
 
 - Para la generación de la publicación se analizaron otras alternativas a *Leanpub* como: **a)** hacer una web puramente en HTML/CSS, **b)** hacer una web con algún CMS como *Joomla* o *WordPress*, y **c)** utilizar un generador de ebook como *Pandoc* o similares. Sin embargo la primera elección fue *GitBook* ya que integraba varias características como la auto publicación online, la redacción en markdown, la exportación a otros formatos (ePub, PDF, Mobi), y un entorno de colaboración con terceros mediante la publicación de comentarios y notas. A Mayo de 2020 el e-book fue transferido a *Leanpub* dado que *GitBook* se actualizo a una nueva versión con un modelo de negocio más orientado a la documentación online de equipos y su plan free paso a carecer de las principales características por las que había sido elegido en un primer momento. *Leanpub* es la elección actual ya que posee en excelente soporte para la publicación de e-books.
 - Para la publicación de códigos fuentes se analizaron otras plataformas a *GitHub* como: **a)** *GitLab*, o **b)** *Bitbucket*. Sin embargo la elección fue *GitHub* ya que, de las tres, en mi experiencia es la que más proyectos open source aloja. Siendo mi deseo que esta publicación pueda ser el punto de partida para otros fork y discusiones en la comunidad de *Go*.
-- Para el control de versiones de analizo también *SVN*. Sin embargo la elección fue *Git* ya que a diferencia de *SVN* no requiere de un repositorio central facilitando el trabajo de la redacción de la publicación en diferentes equipos y lugares.
-- Para el lenguaje de redacción de la publicación se analizaron otras alternativas a *Markdown* como: **a)** *HTML*, **b)** *OpenDocument*, y **c)** *reStructuredText*. Sin embargo la primera elección fue *Markdown* ya que resulta ser un lenguaje mucho más simple de aprender que los anteriores y existe una gran cantidad de herramientas para convertir el mismo en otros formatos. Este punto es muy importante para facilitar una posterior colaboración y ampliación de la publicación mediante la comunidad interesada en *Go*. A mayo de 2020 junto con la migración de *GitBook* a *Leanpub* se actualizo de *Markdown* a *Markua* siendo este último una extensión del primero orientada a la redacción exclusiva de e-books.
+- Para el control de versiones se analizó también *SVN*. Sin embargo la elección fue *Git* ya que a diferencia de *SVN* no requiere de un repositorio central facilitando el trabajo de la redacción de la publicación en diferentes equipos y lugares.
+- Para el lenguaje de redacción de la publicación se analizaron otras alternativas a *Markdown* como: **a)** *HTML*, **b)** *OpenDocument*, y **c)** *reStructuredText*. Sin embargo la primera elección fue *Markdown* ya que resulta ser un lenguaje mucho más simple de aprender que los anteriores y existe una gran cantidad de herramientas para convertir el mismo en otros formatos. Este punto es muy importante para facilitar una posterior colaboración y ampliación de la publicación mediante la comunidad interesada en *Go*. A mayo de 2020 junto con la migración de *GitBook* a *Leanpub* se actualizó de *Markdown* a *Markua* siendo este último una extensión del primero orientada a la redacción exclusiva de e-books.
 - Para la generación de diagramas UML se analizaron otras alternativas a *Violet UML* como: **a)** *StarUML*, **b)** *Diagram Designer*, y **c)** *ModelioSoft*. Sin embargo la elección fue *Violet UML* ya que se encuentra disponible para varios Sistemas Operativos y es muy simple de aprender dado que no tiene demasiadas opciones y tipos de diagramas disponibles. La única restricción importante que presento este software es la falta de estilos que imposibilita estereotipar con cursiva a aquellas clases que son abstractas.
 - Para la ejecución online de código de ejemplo en *Go* no analice otras alternativas ya que *Go Playgroung* es la herramienta oficial de *Go* y se encuentra muy popularizada en su comunidad.
 

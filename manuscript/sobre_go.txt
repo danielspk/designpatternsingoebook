@@ -38,7 +38,7 @@ I> Se recomienda utilizar el término *Golang* al realizar búsquedas en interne
 
 *Go* está inspirado en la sintaxis de *C* como otros lenguajes: *C++*, *C#*, *Java*, *PHP*, *Javascript*, etc.
 
-Su elección fue ser afin a la gran comunidad de desarrolladores de *C++* de Google.
+Su elección fue ser afín a la gran comunidad de desarrolladores de *C++* de Google.
 
 Por sus características suele clasificarse como un lenguaje compilado que tiene características de lenguajes interpretados.
 
@@ -57,7 +57,7 @@ Para *Rob Pike*: "*Go* es un intento de combinar la seguridad y el rendimiento d
 - con uso de punteros - pero sin aritmética
 - con cortos tiempos de compilación
 
-Se destaca también por su diseño minimalista y su facilidad para aprenderlo. A modo de comparación mientras otros lenguajes tienen muchas palabras reservadas, *C++ 20* tiene 96, *C# 7* tiene 78, *Java 13* tiene 51; *Go* sólo tiene 25.
+Se destaca también por su diseño minimalista y su facilidad para aprenderlo. A modo de comparación mientras otros lenguajes tienen muchas palabras reservadas, *C++ 20* tiene 96, *C# 7* tiene 78, *Java 13* tiene 51; *Go* solo tiene 25.
 
 ### Ejemplo
 
@@ -108,9 +108,9 @@ Esta filosofía para algunos controvertida es la que creo en mi opinión que hac
 
 Los proverbios de *Go* invitan a los desarrolladores a reflexionar sobre la filosofía de *Go* y a la enseñanza sobre el lenguaje.
 
-Se invita a los lectores a profundizar más sobre esta filosofía en base a la charla de *Rob Pike* en el Gopherfest del año 2015: "*Go* Proverbs". [\[44\]](#recursos)
+Se invita a los lectores a profundizar más sobre esta filosofía con base en la charla de *Rob Pike* en el Gopherfest del año 2015: "*Go* Proverbs". [\[44\]](#recursos)
 
-A continuación se exponen sólo algunos de estos proverbios:
+A continuación se exponen solo algunos de estos proverbios:
 
 - No se comunique compartiendo memoria, comparta memoria comunicándose.
 - La concurrencia no es paralelismo.

@@ -7,7 +7,7 @@ Algunos, rápidamente podrían inferir que *Go* no es un lenguaje orientado a ob
 
 Los desarrolladores tenemos una tendencia natural a comparar las cosas. Entonces, por ejemplo, algunos podrían decir que dado que *Java* es académicamente reconocido como un lenguaje estrictamente orientado a objetos, y dado que ese lenguaje tiene entre otras características clases, objetos y herencia; como *Go* no las tiene, entonces no podría ser un lenguaje orientado a objetos.
 
-*¿Alguien alguna vez escuchó decir que Javascript es un lenguaje orientado a objetos?*. Existe una gran discusión sobre si lo es o no lo es - a fin de cuentas en *Javascript* tampoco hay clases ni herencia de la forma como la que la hay en *Java*. No obstante *Javascript* suele ser considerado un lenguaje orientado a objetos. *¿Porqué?*. Porque permite implementar ciertas características de la programación orientada a objetos.
+*¿Alguien alguna vez escuchó decir que Javascript es un lenguaje orientado a objetos?*. Existe una gran discusión sobre si lo es o no lo es - a fin de cuentas en *Javascript* tampoco hay clases ni herencia de la forma como la que la hay en *Java*. No obstante *Javascript* suele ser considerado un lenguaje orientado a objetos. *¿Por qué?*. Porque permite implementar ciertas características de la programación orientada a objetos.
 
 I> En ES6 se incorporan las clases en *Javascript* aunque con un soporte muy limitado en comparación con otros lenguajes orientados a objetos clásicos.
 
@@ -48,7 +48,7 @@ Cada lenguaje es único y permite implementar el paradigma orientado a objetos d
 
 Como se puede apreciar lenguajes como *Scala*, *Eiffel*, *C++* y *Smalltalk* son muy distintos entre sí, pero todos ellos respetan el paradigma orientado a objetos.
 
-Al analizar a *Go*, debemos comparar qué características propias de la programación orientada a objetos se pueden implementar y no simplemente hacer una comparación de un lenguaje respecto de otro sólamente por la falta o no de ciertos atributos o características individuales.
+Al analizar a *Go*, debemos comparar qué características propias de la programación orientada a objetos se pueden implementar y no simplemente hacer una comparación de un lenguaje respecto de otro solamente por la falta o no de ciertos atributos o características individuales.
 
 ## Cómo es la POO en Go
 
@@ -131,7 +131,7 @@ Los tres pilares de la programación orientada a objetos son la *herencia*, el *
 Como ya se dijo, en *Go* no existe la herencia, o al menos no la herencia de clases como se la conoce en otros lenguajes tales como *Scala*, *Swift* o *Eiffel* por ejemplo.
 
 Los tipos de datos en *Go* permiten ampliar/modificar su comportamiento incrustando otros tipos dentro de él.
-Cada estructura incorpora los tipos de datos y comportamientos de la/s estructura/s incrustrada/s.
+Cada estructura incorpora los tipos de datos y comportamientos de la/s estructura/s incrustada/s.
 
 Ejemplo:
 
@@ -265,7 +265,7 @@ En *Go* el polimorfismo se logra con la ayuda de interfaces.
 
 #### Método Estáticos
 
-Esta característica no es posible de replicar en *Go* dado que cada comportamiento asociado a un tipo de datos, sólo puede ser invocado cuando exista un referencia a dicho tipo. Se puede emular esta característica usando el paradigma procedimental del lenguaje. Si bien no es un comportamiento puramente orientado a objetos, se pueden lograr similares resultados.
+Esta característica no es posible de replicar en *Go* dado que cada comportamiento asociado a un tipo de datos, solo puede ser invocado cuando exista un referencia a dicho tipo. Se puede emular esta característica usando el paradigma procedimental del lenguaje. Si bien no es un comportamiento puramente orientado a objetos, se pueden lograr similares resultados.
 
 Ejemplo:
 
@@ -290,7 +290,7 @@ func CuentaCorrienteGetBanco() string {
 
 ## Qué dicen otros autores
 
-Según Gigi Sayfan [\[6\]](#recursos) "*Go* es una extraña mezcla de ideas antiguas y nuevas.", y "Muchas personas ni siquiera están seguras de si *Go* es un lenguaje orientado a objetos", sin embargo para el "*Go* es un lenguaje de programación orientado a objetos de buena fe. Permite el modelado basado en objetos y promueve las mejores prácticas de usar interfaces en lugar de tipos concretos de jerarquías. *Go* tiene algunas elecciones sintácticas inusuales, pero el trabajo general con tipos, métodos e interfaces parece simple, ligero y natural. La incrustación no es muy pura, pero aparentemente estaba en juego el pragmatismo, y se proporcionó una incrustación en lugar de sólo la composición por nombre".
+Según Gigi Sayfan [\[6\]](#recursos) "*Go* es una extraña mezcla de ideas antiguas y nuevas.", y "Muchas personas ni siquiera están seguras de si *Go* es un lenguaje orientado a objetos", sin embargo para el "*Go* es un lenguaje de programación orientado a objetos de buena fe. Permite el modelado basado en objetos y promueve las mejores prácticas de usar interfaces en lugar de tipos concretos de jerarquías. *Go* tiene algunas elecciones sintácticas inusuales, pero el trabajo general con tipos, métodos e interfaces parece simple, ligero y natural. La incrustación no es muy pura, pero aparentemente estaba en juego el pragmatismo, y se proporcionó una incrustación en lugar de solo la composición por nombre".
 
 Para Junade Ali [\[39\]](#recursos) "La programación orientada a objetos es más que solo clases y objetos; es un paradigma de programación basado alrededor de objetos (estructuras de datos) que contienen campos de datos y métodos. Es esencial entender esto; el uso de clases para organizar un grupo de métodos no relacionados no es orientación a objetos".
 

@@ -4,7 +4,7 @@
 ![](pkg.png)
 C> *Imagen* - [\[49\]](#recursos)
 
-Este apartado tratará sobre ***¿Qué es un Patron de Diseño?*** y ***¿Qué es GoF?***.
+Este apartado tratará sobre ***¿Qué es un Patrón de Diseño?*** y ***¿Qué es GoF?***.
 
 ## Patrones de Diseño
 
@@ -13,9 +13,9 @@ En el libro de Erich Gamma et al - "Patrones de Diseño" [\[38\]](#recursos) - e
 - "Diseñar software orientado a objetos es difícil, y aún lo es más diseñar software orientado a objetos reutilizable".
 - "Algo que los expertos saben que no hay que hacer es resolver cada problema partiendo de cero. Por el contrario, reutilizan soluciones que ya les han sido útiles en el pasado. Cuando encuentran una solución buena, la usan una y otra vez".
 - "Los patrones de diseño hacen que sea más fácil reutilizar buenos diseños y arquitecturas".
-- "Los patrones de diseño nos ayudan a elegir las alternativas de diseño que hacen que un sistema sea reutilizable, y a evitar aquéllas que dificultan dicha reutilización. Pueden incluso mejorar la documentación y el mantenimiento de los sistemas existentes al proporcionar una especificación explícita de las interacciones entre clases y objetos y de cúal es su intención. En definitiva los patrones de diseño ayudan a un diseñador a lograr un buen diseño más rápidamente".
+- "Los patrones de diseño nos ayudan a elegir las alternativas de diseño que hacen que un sistema sea reutilizable, y a evitar aquellas que dificultan dicha reutilización. Pueden incluso mejorar la documentación y el mantenimiento de los sistemas existentes al proporcionar una especificación explícita de las interacciones entre clases y objetos y de cuál es su intención. En definitiva los patrones de diseño ayudan a un diseñador a lograr un buen diseño más rápidamente".
 
-Como se puede observar se utilizan términos como *clases* y *objetos* ya que los patrones de diseño están enfocados al desarrollo orientado a objetos siendo los ejemplos de su libro implementados en *C++*.
+Como se puede observar se utilizan términos como *clases* y *objetos*, ya que los patrones de diseño están enfocados al desarrollo orientado a objetos siendo los ejemplos de su libro implementados en *C++*.
 
 En las siguientes secciones se detallará como es posible implementar dichos patrones de diseño en *Go*.
 

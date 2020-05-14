@@ -10,7 +10,7 @@ Los *objetos* propios de la programación orientada a objetos se definirán como
 
 ## Método
 
-Los *métodos de clases* propios de la programación orientada a objetos se definirán como *comportamientos de un tipo* o simplemento como *método* (de tipo).
+Los *métodos de clases* propios de la programación orientada a objetos se definirán como *comportamientos de un tipo* o simplemente como *método* (de tipo).
 
 ## Propiedad
 

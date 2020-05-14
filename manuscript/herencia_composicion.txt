@@ -14,15 +14,15 @@ Tal como menciona Steve Francia [\[8\]](#recursos) "Existen varios enfoques dife
 
 ## Herencia
 
-La herencia se puede puede expresar de dos maneras: *herencia de clases* y *herencia de interfaces*. "La herencia de clases define la implementación de un objeto en términos de la implementación de otro objeto. En resumen, es un mecanismo para compartir código y representación. Por el contrario, la herencia de interfaces *(o subtipado)* describe cuándo se puede usar un objeto en el lugar de otro." [\[38\]](#recursos)  
-No todos los lenguajes de programación implementan la herencia de la misma manera. En algunos lenguajes la herencia de clases y la de interfaces existen como un mismo mecanismo (*Eiffel* por ejemplo), mientras que en otros están separados (*Java* por ejemplo). Algunos sólo permiten heredar de un único objeto, esto se denomina *herencia simple*; mientras otros permiten heredar de varios objetos y a esto se lo denomina *herencia múltiple*.  
+La herencia se puede expresar de dos maneras: *herencia de clases* y *herencia de interfaces*. "La herencia de clases define la implementación de un objeto en términos de la implementación de otro objeto. En resumen, es un mecanismo para compartir código y representación. Por el contrario, la herencia de interfaces *(o subtipado)* describe cuándo se puede usar un objeto en el lugar de otro." [\[38\]](#recursos)  
+No todos los lenguajes de programación implementan la herencia de la misma manera. En algunos lenguajes la herencia de clases y la de interfaces existen como un mismo mecanismo (*Eiffel* por ejemplo), mientras que en otros están separados (*Java* por ejemplo). Algunos solamente permiten heredar de un único objeto, esto se denomina *herencia simple*; mientras otros permiten heredar de varios objetos y a esto se lo denomina *herencia múltiple*.  
 Asimismo los comportamientos y datos heredados pueden estar limitados al acceso con el que el objeto padre los definió, esto se denomina *visibilidad*.
 
 Se expresa a la herencia como una relación **es-un/a**.
 
 ## Composición
 
-La composicion es una manera de definir objetos dentro de otros objetos. De esta forma un objeto puede adquirir los comportamientos y datos de los otros objetos por los que esta compuesto.
+La composición es una manera de definir objetos dentro de otros objetos. De esta forma un objeto puede adquirir los comportamientos y datos de los otros objetos por los que está compuesto.
 
 D> Esto en cierta medida es más similar al concepto de herencia múltiple que al de simple.
 
@@ -34,7 +34,7 @@ Seguramente no haya una respuesta única. No obstante en el *faq* de la document
 
 "**¿Por qué no hay herencia?**:  
 La programación orientada a objetos, al menos en los lenguajes más conocidos, implica demasiada discusión sobre las relaciones entre tipos, relaciones que a menudo podrían derivarse automáticamente. *Go* toma un enfoque diferente.  
-En lugar de requerir que el programador declare de antemano que dos tipos están relacionados, en *Go* un tipo satisface automáticamente cualquier interfaz que especifique un subconjunto de sus métodos. Además de reducir la administración *(la palabra original es bookkeeping)*, este enfoque tiene ventajas reales. Los tipos pueden satisfacer muchas interfaces a la vez, sin las complejidades de la herencia múltiple tradicional. Las interfaces pueden ser muy livianas - una interfaz con uno o incluso cero métodos puede expresar un concepto útil. Las interfaces se pueden agregar tardiamente si aparece una nueva idea o para probarla - sin anotar los tipos originales. Debido a que no existen relaciones explícitas entre los tipos y las interfaces, no hay una jerarquía de tipos para administrar o discutir.  
+En lugar de requerir que el programador declare de antemano que dos tipos están relacionados, en *Go* un tipo satisface automáticamente cualquier interfaz que especifique un subconjunto de sus métodos. Además de reducir la administración *(la palabra original es bookkeeping)*, este enfoque tiene ventajas reales. Los tipos pueden satisfacer muchas interfaces a la vez, sin las complejidades de la herencia múltiple tradicional. Las interfaces pueden ser muy livianas - una interfaz con uno o incluso cero métodos puede expresar un concepto útil. Las interfaces se pueden agregar tardíamente si aparece una nueva idea o para probarla - sin anotar los tipos originales. Debido a que no existen relaciones explícitas entre los tipos y las interfaces, no hay una jerarquía de tipos para administrar o discutir.  
 Es posible utilizar estas ideas para construir algo análogo a los type-safe de las pipes de Unix. Por ejemplo, vea cómo *fmt.Fprintf* permite la impresión formateada de cualquier salida, no solo de un archivo, o cómo el paquete *bufio* puede estar completamente separado de la E/S, o cómo el paquete *image* genera archivos de imágenes comprimidas. Todas estas ideas se derivan de una única interfaz (*io.Writer*) que representa un único método (*Write*). Y esto sólo está arañando la superficie. Las interfaces en *Go* tienen una profunda influencia sobre cómo se estructuran los programas.  
 Toma un tiempo acostumbrarse, pero este estilo implícito de dependencia de tipos es una de las cosas más productivas sobre *Go*."
 
@@ -96,7 +96,7 @@ class Manzana {
 
 **Pros:**
 
-* **Bajo Acoplamiento:** Cualquier cambio en la clase *Fruta* no afecta a la clase *Manzana*. Incluso si se agrega un método en la clase *Fruta* con la misma firma de uno de la clase Manzana no afecta a ésta última.
+* **Bajo Acoplamiento:** Cualquier cambio en la clase *Fruta* no afecta a la clase *Manzana*. Incluso si se agrega un método en la clase *Fruta* con la misma firma de uno de la clase Manzana no afecta a esta última.
 * **Reutilización de Código:** Se puede lograr de igual forma que con la herencia, aunque hay que llamar explícitamente al código que necesita ser reutilizado (**Nota:** esto último no es necesario en *Go*).
 * **Encapsulamiento más fuerte:** en el ejemplo, si se cambia la firma del método *pelar()* en la clase *Fruta*, no hay necesidad de cambiar nada en la clase *Manzana*.
 
@@ -177,7 +177,7 @@ Como se detallará más adelante, en la implementación de cada patrón de dise�
 - mediante interfaces cuando se deba asegurar que una estructura es parte de una relación **es-un** y/o requiera implementar ciertos comportamientos.
 
 Estrictamente hablando de programación orientada a objetos, la mayor dificultad encontrada es cuando una *clase abstracta* implementa un *método concreto* con comportamiento que llama a *métodos abstractos* también definidos en dicha *clase abstracta* que luego serán implementados en las *clases hijas*.  
-Para emular este comportamiento la estrategia utilizada en esta publicación será pasar como un argumento del *método concreto* de la *clase abstracta* una referencia de una *interface* que exponga cúales serán los *métodos abstractos* que serán implementados por las *clases hijas* que implementen esa *interface*.
+Para emular este comportamiento la estrategia utilizada en esta publicación será pasar como un argumento del *método concreto* de la *clase abstracta* una referencia de una *interface* que exponga cuáles serán los *métodos abstractos* que serán implementados por las *clases hijas* que implementen esa *interface*.
 
 Veamos un ejemplo para entender la estrategia:
 
