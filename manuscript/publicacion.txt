@@ -3,16 +3,19 @@
 Esta publicación se distribuye como un e-book gratuito y se encuentra en constante evolución. Puede acceder a la versión más actualizada desde la siguiente dirección:
 
 <https://www.designpatternsingo.com/>
-  
+
+
 
 Los códigos fuentes de ejemplo de los patrones de diseño utilizados en este e-book se encuentran en el siguiente repositorio público:
 
 <https://github.com/danielspk/designpatternsingo>
-  
-  
+
+
+
 Asimismo, el código fuente de este e-book se encuentra en el siguiente repositorio público:
 
 <https://github.com/danielspk/designpatternsingoebook>
-  
-  
+
+
+
 **Última actualización:**  13 de Mayo de 2020 a las 19:20hs.

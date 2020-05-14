@@ -1,0 +1,17 @@
+# Patrones Estructurales
+
+{width: 15.0%}
+![](doc.png)
+C> *Imagen* - [\[49\]](#recursos)
+
+Según el libro "Patrones de Diseño" [\[38\]](#recursos) los patrones estructurales "se ocupan de cómo se combinan las clases y los objetos para formar estructuras más grandes. Los patrones estructurales de *clases* hacen uso de la herencia para componer interfaces o implementaciones."
+
+### Contenido
+
+- [Composite](#patron_composite)
+- [Adapter](#patron_adapter)
+- [Bridge](#patron_bridge)
+- [Proxy](#patron_proxy)
+- [Decorator](#patron_decorator)
+- [Facade](#patron_facade)
+- [Flyweight](#patron_flyweight)

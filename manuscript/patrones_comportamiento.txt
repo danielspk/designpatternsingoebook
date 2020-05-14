@@ -1,0 +1,21 @@
+# Patrones de Comportamiento
+
+{width: 15.0%}
+![](doc.png)
+C> *Imagen* - [\[49\]](#recursos)
+
+Según el libro "Patrones de Diseño" [\[38\]](#recursos) los patrones de comportamiento "tienen que ver con algoritmos y con la asignación de responsabilidades a objetos. Los patrones de comportamiento describen no sólo patrones de clases y objetos, sino también patrones de comunicación entre ellos."
+
+### Contenido
+
+- [Strategy](#patron_strategy)
+- [Chain of Responsibility](#patron_chainofresponsability)
+- [Command](#patron_command)
+- [Template Method](#patron_templatemethod)
+- [Memento](#patron_memento)
+- [Interpreter](#patron_interpreter)
+- [Iterator](#patron_iterator)
+- [Visitor](#patron_visitor)
+- [State](#patron_state)
+- [Mediator](#patron_mediator)
+- [Observer](#patron_observer)

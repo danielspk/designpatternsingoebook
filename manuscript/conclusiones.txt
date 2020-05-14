@@ -1,0 +1,17 @@
+# Conclusiones
+
+*Go* es un lenguaje que en muchos aspector parece "*retrazar*" o da la sensación de "*antiguo*". Esta visión puede ser correcta si se lo compara por ejemplo con la forma en la que programaríamos en *Java*. Esto es justamente lo que se debe evitar: "*la comparación*". *Go* nace con una filosofía bien clara que todo desarrollador de *Go* debería conocer.
+
+Dicho esto, tal como se pudo demostrar, es factible implementar los 23 Patrones de Diseño GoF en *Go* sin grandes modificaciones de las estructuras originales.
+
+Su aplicación no es una simple traducción literal de un lenguaje a otro - *como he visto muchas veces* - sino que el uso de estos patrones realmente pueden aportar coherencia y valor al software desarrollado en *Go*.
+
+Hemos visto que *Go* no es realmente un lenguaje orientado a objetos, sin embargo también se pudo demostrar que sus características permiten programar aplicando prácticas y patrones propios de la programación orientada a objetos.
+
+Dicho esto, creo que es muy importante destacar que cada lenguaje de programación nace con un proposito definido, y que si bien las experiencias previas que tenemos como desarrolladores de software nos pueden facilitar el aprendizaje de nuevos lenguajes de programación, es vital comprender cuales son las recomendaciones, usos, estilos y características propias del lenguaje que estamos aprendiendo para no cometer el error común de querer hacer las cosas de igual manera como las haríamos en otros lenguajes.
+
+Considero que *Go* es un excelente lenguaje para realizar trabajos concurrentes. Este tipo de programación hace que tengamos que repensar como podemos reutilizar soluciones ante problemas conocidos. Por tal motivo, y haciendo alución a lo antes comentado, considero que un desarrollador de *Go* debería invertir más tiempo en aprender como aplicar *patrones de concurrencia* que *patrones de diseño*.
+
+Estoy seguro que todo lo visto en esta publicación es de valor para el desarrollador de *Go*, pero me gustaría cerrar esta conclusión con la siguiente recomendación:
+
+T> No deberían programar en *Go* como lo hacen en *Java*, *PHP*, *C\#*, etc. Deberían potenciar las características propias del lenguaje en sus desarrollos; esto es comprender a fondo, por ejemplo, como funcionan las *interfaces*, la *composición* y la *concurrencia*; y sobre esta base reutilizar conceptos o usos de patrones de diseño cuando realmente se justifiquen.

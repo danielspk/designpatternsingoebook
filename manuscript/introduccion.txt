@@ -5,14 +5,17 @@ Este trabajo tiene como objetivo discutir sobre la programación orientada a obj
 ## Organización
 
 La primera parte del trabajo está destinada a la presentación del lenguaje *Go* y a como se puede aplicar el paradigma orientado a objetos.
-  
+
+
 
 En la segunda parte se expone como pueden implementarse los 23 patrones de diseño GoF.
-  
+
+
 
 La tercera y última parte está destinada a las conclusiones generales y a los motivos que me llevaron a realizar esta publicación.
-  
-  
+
+
+
 {width: 36.0%}
 ![](gologofuchsia.png)
 C> *Imagen* - [\[52\]](#recursos)
