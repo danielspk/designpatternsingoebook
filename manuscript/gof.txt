@@ -51,8 +51,7 @@ Según su *Ámbito*:
 
 | Creación | Estructurales | Comportamiento |
 | :--- | :--- | :--- |
-| Factory Method | Adapter | Interpreter
-                                         |
+| Factory Method | Adapter | Interpreter |
 |  |  | Template Method |
 
 I> Extracto de "Patrones de Diseño" - Tabla 1.1 - Patrones de diseño - [\[38\]](#recursos)
