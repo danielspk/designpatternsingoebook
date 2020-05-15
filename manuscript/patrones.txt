@@ -6,7 +6,7 @@ C> *Imagen* - [\[49\]](#recursos)
 
 Este apartado tratará sobre ***¿Qué es un Patrón de Diseño?*** y ***¿Qué es GoF?***.
 
-## Patrones de Diseño
+### Patrones de Diseño
 
 En el libro de Erich Gamma et al - "Patrones de Diseño" [\[38\]](#recursos) - exponen la importancia y usos de los patrones de diseño en conceptos como:
 
@@ -19,7 +19,7 @@ Como se puede observar se utilizan términos como *clases* y *objetos*, ya que l
 
 En las siguientes secciones se detallará como es posible implementar dichos patrones de diseño en *Go*.
 
-## Contenido
+### Contenido
 
 - [Patrones de Diseño GoF](#gof)
 - [Patrones de Comportamiento](#patrones_comportamiento)

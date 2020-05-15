@@ -1,5 +1,6 @@
+{pagebreak}
 {#poo_objetos}
-# Objetos
+## Objetos
 
 A diferencia de lenguajes explícitamente orientados a objetos como *C++*, *Java*, *Smalltalk*, y *Python* entre otros, en *Go* no existen las clases, ni los objetos, ni las excepciones, ni la herencia de clases.
 
@@ -50,9 +51,9 @@ Como se puede apreciar lenguajes como *Scala*, *Eiffel*, *C++* y *Smalltalk* son
 
 Al analizar a *Go*, debemos comparar qué características propias de la programación orientada a objetos se pueden implementar y no simplemente hacer una comparación de un lenguaje respecto de otro solamente por la falta o no de ciertos atributos o características individuales.
 
-## Cómo es la POO en Go
+### Cómo es la POO en Go
 
-### Clases y Objetos
+#### Clases y Objetos
 
 En *Go* no existen clases ni objetos. Existen tipos de datos definidos por el usuario a los cuales se les pueden incorporar comportamientos. En una analogía con una clase, las propiedades pudieran ser los tipos de datos de una estructura, y los métodos las funciones o comportamientos asociados al tipo de dato.
 Ejemplo sobre una estructura:
@@ -84,7 +85,7 @@ func (n Int) EsMayorQue(n2 Int) bool {
 
 Ejecutar código: <https://play.golang.org/p/5WXUHGRBfn4>
 
-### Interfaces
+#### Interfaces
 
 "La interfaz de un objeto no dice nada acerca de su implementación - distintos objetos son libres de implementar las peticiones de forma diferente -. Eso significa que dos objetos con implementaciones completamente diferentes pueden tener interfaces idénticas". [\[38\]](#recursos). *Go* cumple con esta característica de interfaces sin implementación. Lenguajes de programación tales como *Visual Basic .Net* o *Kotlin* definen sus interfaces de forma explícita. En *Go* las interfaces son implícitas ya que no existe ninguna palabra reservada o símbolo para tal fin (tal como `implements` en *Groovy* o `:` en *C#*). En *Go* cualquier tipo de dato que implemente todos los métodos de una interfaz, implícitamente la implementa. Este comportamiento es análogo al de algunos lenguajes de tipado dinámico, como *Python* o *Boo*, donde a esto se lo conoce como *Duck typing* (*"si camina como un pato y grazna como un pato, entonces debe ser un pato"* [\[54\]](#recursos)). En *Go* el compilador chequea forzosamente que se si referencia a un tipo de dato como una interface, este debe implementar todos sus comportamientos sin excepción.
 
@@ -118,7 +119,6 @@ SaltarYCaminar(leon)
 ```
 
 Ejecutar código: <https://play.golang.org/p/MD6D893_1KB>
-  
 
 Como se puede observar la función *SaltarYCaminar()* espera una variable de tipo *Felino* pero se le pasa una de tipo *Leon*. Como el tipo *Leon* implementar los métodos *Caminar()* y *Saltar()* implícitamente también es un *Felino*.
 
@@ -202,7 +202,6 @@ gerente.InformarIngreso()
 ```
 
 Ejecutar código: <https://play.golang.org/p/rBBwVyj9sjQ>
-  
 
 En *Go* entonces se manifiesta la herencia de interfaz. - *más información en el siguiente apartado de "Herencia / Composición"*.
 
@@ -288,7 +287,7 @@ func CuentaCorrienteGetBanco() string {
 }
 ```
 
-## Qué dicen otros autores
+### Qué dicen otros autores
 
 Según Gigi Sayfan [\[6\]](#recursos) "*Go* es una extraña mezcla de ideas antiguas y nuevas.", y "Muchas personas ni siquiera están seguras de si *Go* es un lenguaje orientado a objetos", sin embargo para el "*Go* es un lenguaje de programación orientado a objetos de buena fe. Permite el modelado basado en objetos y promueve las mejores prácticas de usar interfaces en lugar de tipos concretos de jerarquías. *Go* tiene algunas elecciones sintácticas inusuales, pero el trabajo general con tipos, métodos e interfaces parece simple, ligero y natural. La incrustación no es muy pura, pero aparentemente estaba en juego el pragmatismo, y se proporcionó una incrustación en lugar de solo la composición por nombre".
 
@@ -296,6 +295,6 @@ Para Junade Ali [\[39\]](#recursos) "La programación orientada a objetos es má
 
 Incluso la propia gente que desarrolla *Go* responde a esta pregunta [\[3\]](#recursos) como "Si y no".
 
-## Mi punto de vista
+### Mi punto de vista
 
 Ya que existen otros lenguajes que permiten programar orientado a objetos, sin ser realmente orientados a objetos, puedo decir que **"*Go* es un lenguaje no orientado a objetos que permite la programación orientada a objetos - aunque no de la forma tradicional"**.

@@ -1,5 +1,6 @@
+{pagebreak}
 {#poo_herencia}
-# Herencia / Composición
+## Herencia / Composición
 
 Como se indicó previamente en *Go* no existe el concepto de herencia de implementación típico de lenguajes orientados a objetos como *Java*, *C++* y *Smalltalk* entre otros.
 
@@ -12,7 +13,7 @@ Tal como menciona Steve Francia [\[8\]](#recursos) "Existen varios enfoques dife
 - Polimorfismo
 - Composición de objetos
 
-## Herencia
+### Herencia
 
 La herencia se puede expresar de dos maneras: *herencia de clases* y *herencia de interfaces*. "La herencia de clases define la implementación de un objeto en términos de la implementación de otro objeto. En resumen, es un mecanismo para compartir código y representación. Por el contrario, la herencia de interfaces *(o subtipado)* describe cuándo se puede usar un objeto en el lugar de otro." [\[38\]](#recursos)  
 No todos los lenguajes de programación implementan la herencia de la misma manera. En algunos lenguajes la herencia de clases y la de interfaces existen como un mismo mecanismo (*Eiffel* por ejemplo), mientras que en otros están separados (*Java* por ejemplo). Algunos solamente permiten heredar de un único objeto, esto se denomina *herencia simple*; mientras otros permiten heredar de varios objetos y a esto se lo denomina *herencia múltiple*.  
@@ -20,7 +21,7 @@ Asimismo los comportamientos y datos heredados pueden estar limitados al acceso 
 
 Se expresa a la herencia como una relación **es-un/a**.
 
-## Composición
+### Composición
 
 La composición es una manera de definir objetos dentro de otros objetos. De esta forma un objeto puede adquirir los comportamientos y datos de los otros objetos por los que está compuesto.
 
@@ -28,7 +29,7 @@ D> Esto en cierta medida es más similar al concepto de herencia múltiple que a
 
 Se expresa a la composición como una relación **tiene-un/a**.
 
-## ¿Por qué *Go* no tiene herencia?
+### ¿Por qué *Go* no tiene herencia?
 
 Seguramente no haya una respuesta única. No obstante en el *faq* de la documentación oficial de *Go* responden a esta pregunta de la siguiente forma [\[3\]](#recursos):
 
@@ -38,7 +39,7 @@ En lugar de requerir que el programador declare de antemano que dos tipos están
 Es posible utilizar estas ideas para construir algo análogo a los type-safe de las pipes de Unix. Por ejemplo, vea cómo *fmt.Fprintf* permite la impresión formateada de cualquier salida, no solo de un archivo, o cómo el paquete *bufio* puede estar completamente separado de la E/S, o cómo el paquete *image* genera archivos de imágenes comprimidas. Todas estas ideas se derivan de una única interfaz (*io.Writer*) que representa un único método (*Write*). Y esto sólo está arañando la superficie. Las interfaces en *Go* tienen una profunda influencia sobre cómo se estructuran los programas.  
 Toma un tiempo acostumbrarse, pero este estilo implícito de dependencia de tipos es una de las cosas más productivas sobre *Go*."
 
-## ¿La composición es mejor que la herencia?
+### ¿La composición es mejor que la herencia?
 
 En la comunidad de práctica de desarrollo de software existen miles de afirmaciones poco fundadas del estilo *'esto es mejor que aquello'*.  
 Al incursionar en *Go* y leer sobre por qué no existe la herencia me encontraba con frases del estilo "la herencia es mala", "la herencia simple no alcanza pero la herencia múltiple es aún peor", etc. En más de una oportunidad encontré una referencia a un artículo de JavaWorld [\[14\]](#recursos) donde el autor cuenta la siguiente anécdota:
@@ -47,7 +48,7 @@ Al incursionar en *Go* y leer sobre por qué no existe la herencia me encontraba
 
 Veamos un pequeño ejemplo en *Java* - *ya que permite ambas formas* - con algunos pros y contras - basado en el siguiente artículo [\[15\]](#recursos):
 
-### Herencia
+#### Herencia
 
 ```java
 class Fruta {
@@ -65,18 +66,18 @@ class Manzana extends Fruta {
 
 **Pros:**
 
-* **Reutilización de código:** todo código definido en la clase *Fruta* puede ser reutilizado por cualquiera de sus subclases.
-* **Polimorfismo:** una variable de tipo Fruta puede contener una referencia a un objeto de tipo superclase o cualquiera de sus subclases.
-* **Enlace dinámico:** en tiempo de ejecución se decidirá que método invocar en función del tipo de clase del objeto.
-* **Facilidad para agregar una nueva subclase:** simplemente se debe agregar una subclase que heredé de la superclase.
+- **Reutilización de código:** todo código definido en la clase *Fruta* puede ser reutilizado por cualquiera de sus subclases.
+- **Polimorfismo:** una variable de tipo Fruta puede contener una referencia a un objeto de tipo superclase o cualquiera de sus subclases.
+- **Enlace dinámico:** en tiempo de ejecución se decidirá que método invocar en función del tipo de clase del objeto.
+- **Facilidad para agregar una nueva subclase:** simplemente se debe agregar una subclase que heredé de la superclase.
 
 **Contras:**
 
-* **Equipaje adicional:** se heredan todos los métodos y propiedades de la superclase aunque no se deseen todos ellos.
-* **Alto Acoplamiento:** La subclase y superclase están fuertemente conectadas. Un cambio en la superclase puede impactar negativamente en la subclase.
-* **Débil Encapsulamiento**: si cambia la firma de un método en la superclase, hasta que la subclase no lo modifique el código no funcionará/compilará.
+- **Equipaje adicional:** se heredan todos los métodos y propiedades de la superclase aunque no se deseen todos ellos.
+- **Alto Acoplamiento:** La subclase y superclase están fuertemente conectadas. Un cambio en la superclase puede impactar negativamente en la subclase.
+- **Débil Encapsulamiento**: si cambia la firma de un método en la superclase, hasta que la subclase no lo modifique el código no funcionará/compilará.
 
-### Composición
+#### Composición
 
 ```java
 class Fruta {
@@ -96,16 +97,16 @@ class Manzana {
 
 **Pros:**
 
-* **Bajo Acoplamiento:** Cualquier cambio en la clase *Fruta* no afecta a la clase *Manzana*. Incluso si se agrega un método en la clase *Fruta* con la misma firma de uno de la clase Manzana no afecta a esta última.
-* **Reutilización de Código:** Se puede lograr de igual forma que con la herencia, aunque hay que llamar explícitamente al código que necesita ser reutilizado (**Nota:** esto último no es necesario en *Go*).
-* **Encapsulamiento más fuerte:** en el ejemplo, si se cambia la firma del método *pelar()* en la clase *Fruta*, no hay necesidad de cambiar nada en la clase *Manzana*.
+- **Bajo Acoplamiento:** Cualquier cambio en la clase *Fruta* no afecta a la clase *Manzana*. Incluso si se agrega un método en la clase *Fruta* con la misma firma de uno de la clase Manzana no afecta a esta última.
+- **Reutilización de Código:** Se puede lograr de igual forma que con la herencia, aunque hay que llamar explícitamente al código que necesita ser reutilizado (**Nota:** esto último no es necesario en *Go*).
+- **Encapsulamiento más fuerte:** en el ejemplo, si se cambia la firma del método *pelar()* en la clase *Fruta*, no hay necesidad de cambiar nada en la clase *Manzana*.
 
 **Contras:**
 
-* **Es más difícil agregar una nueva clase:** sintácticamente requiere de más código.
-* **Costo de rendimiento:** el método explícito de reenvío de llamadas tiene un costo de rendimiento en comparación con la invocación directa de la herencia.
+- **Es más difícil agregar una nueva clase:** sintácticamente requiere de más código.
+- **Costo de rendimiento:** el método explícito de reenvío de llamadas tiene un costo de rendimiento en comparación con la invocación directa de la herencia.
 
-## Ejemplo de Composición en *Go*
+### Ejemplo de Composición en *Go*
 
 Como veremos la composición en *Go* se logra embebiendo tipos de datos unos dentro de otros:
 
@@ -137,9 +138,8 @@ func main() {
 ```
 
 Ejecutar código: <https://play.golang.org/p/7W89468lRhC>
-  
 
-## Composición e interfaces en *Go*
+### Composición e interfaces en *Go*
 
 ```go
 type Primate interface {
@@ -165,11 +165,10 @@ DarDeComer(kong)
 ```
 
 Ejecutar código: <https://play.golang.org/p/tZhaQwcvez9>
-  
 
 Como se puede observar la función *DarDeComer()* espera una variable de tipo *Primate* pero se le pasa una de tipo *Gorila*. Como el tipo *Gorila* se compone de un *Antropoide* que implementa el método *Alimentar()* implícitamente también es un *Primate*.
 
-## ¿Cómo afecta esto a la implementación de los Patrones de Diseño GoF?
+### ¿Cómo afecta esto a la implementación de los Patrones de Diseño GoF?
 
 Como se detallará más adelante, en la implementación de cada patrón de diseño, la falta de herencia será suplida de dos formas diferentes y/o complementarias:
 
@@ -226,10 +225,9 @@ claseHija.MetodoConcreto(&claseHija)
 ```
 
 Ejecutar código: <https://play.golang.org/p/NnEeU5Z4XWI>
-  
 
 I> Puede verse el uso de esta estrategia en el patrón [Template Method](#patron_templatemethod).
 
-## Conclusión
+### Conclusión
 
 *Go* permite la *composición* y la *herencia de interfaz*. El uso de interfaces (*es-un*) y de la composición (*tiene-un*) posibilitan la reutilización de código en *Go* y la adopción de técnicas y de patrones orientados a objetos.

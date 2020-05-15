@@ -1,5 +1,6 @@
+{pagebreak}
 {#poo_solid}
-# S.O.L.I.D
+## S.O.L.I.D
 
 SOLID es un acrónimo introducido por Robert C. Martin en su libro "Agile Software Development, Principles, Patterns and Practices" [\[40\]](#recursos) y hace referencia a los siguientes cinco principios:
 
@@ -39,7 +40,6 @@ func (d *Documento) GuardarEnBaseDatos() {
 ```
 
 Ejecutar código: <https://play.golang.org/p/1d5JvLzQTEH>
-  
 
 Un *Documento* debería saber cómo acceder al sistema de archivos local y a la vez como conectarse y operar contra una base de datos. Implementar ambas acciones en una misma estructura genera un alto acoplamiento.
 
@@ -80,7 +80,6 @@ func (gdbd GuardadorDocumentoBaseDatos) Guardar(d model.Documento) {
 ```
 
 Ejecutar código: <https://play.golang.org/p/nxRPMtLbWP2>
-  
 
 **¿Qué pasa en *Go*:** Gracias a la organización en paquetes que permite *Go* es posible crear estructuras, tipos, funciones y métodos empaquetados con propósitos claros y bien definidos.
 
@@ -107,7 +106,6 @@ func (a Animal) Saltar() {
 ```
 
 Ejecutar código: <https://play.golang.org/p/FP80Iem9qqV>
-  
 
 Podemos hacerlo de la siguiente forma:
 
@@ -122,7 +120,6 @@ func (am AnimalModificado) Caminar() {
 ```
 
 Ejecutar código: <https://play.golang.org/p/Sf1WkRugRN3>
-  
 
 **¿Qué pasa en *Go*:** Gracias a la composición que permite *Go* es posible componer tipos simples en más complejos manteniendo la interfaz del tipo original.
 
@@ -159,7 +156,6 @@ func (e Emision) EmitirHTML(r RespuestaHTML) {
 ```
 
 Ejecutar código: <https://play.golang.org/p/4jwdJ0NUjOe>
-  
 
 La estructura *Emision* debe implementar dos comportamientos, ya que debe poder gestionar impresiones en HTML y JSON. Si a futuro se requiriera de otro tipo de impresión - *xml por ejemplo* - se debería modificar su código fuente.
 
@@ -190,7 +186,6 @@ func (e Emision) Emitir(r Respuesta) {
 ```
 
 Ejecutar código: <https://play.golang.org/p/ZJ0iEXpWgt4>
-  
 
 **¿Qué pasa en *Go*:** Al definir firmas de métodos a través de interfaces, y no mediante tipos concretos, es posible utilizar cualquier tipo que respete implícitamente la interfaz.
 
@@ -221,7 +216,6 @@ func (b BotonLogin) OnDobleClick() {
 ```
 
 Ejecutar código: <https://play.golang.org/p/FHu4-lVUJ2D>
-  
 
 Como puede verse la interface *Boton* obliga a implementar ambos comportamientos en sus clientes cuando es muy factible que no todos ellos deban implementar ambas opciones.
 
@@ -250,7 +244,6 @@ func (b BotonIcono) OnDobleClick() {
 ```
 
 Ejecutar código: <https://play.golang.org/p/umwCkd0*eKQ>
-  
 
 **¿Qué pasa en *Go*:** En *Go* puede aplicarse este concepto aislando el comportamiento requerido utilizando interfaces más pequeñas.
 
@@ -275,7 +268,6 @@ type A struct {
 ```
 
 Ejecutar código: <https://play.golang.org/p/ANqhCiBv3Zr>
-  
 
 Como puede verse el tipo A depende del tipo B por lo que si el tipo B es modificado afectará al tipo A.
 
@@ -298,11 +290,10 @@ type A struct {
 ```
 
 Ejecutar código: <https://play.golang.org/p/pHDUY3VCNTI>
-  
 
 **¿Qué pasa en *Go*:** Componer tipos mediante interfaces, y no mediante tipos concretos, permite evitar una fuerte dependencia entre tipos.
 
-## Conclusión
+### Conclusión
 
 Si bien el libro de Robert C. Martin [\[40\]](#recursos) tiene más de una década y media y hace referencia a lenguajes propiamente orientados a objetos, vimos como también pueden aplicarse esos principios en *Go*.
 
