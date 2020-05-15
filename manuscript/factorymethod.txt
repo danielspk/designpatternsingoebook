@@ -1,0 +1,110 @@
+{pagebreak}
+{#patron_factorymethod}
+## Factory Method
+
+### Propósito
+
+Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Factory Method* "define una interfaz para crear un objeto, pero deja que sean las subclases quienes decidan qué clase instanciar. Permite que una clase delegue en sus subclases la creación de objetos".
+
+### También conocido como
+
+*Virtual Constructor* (Constructor Virtual)
+
+### Estructura
+
+{width: 95.0%}
+![](factorymethod.png)
+
+### Participantes
+
+- **Producto:**
+  - define la interfaz de las variables que crea el método de fabricación.
+- **ProductoConcreto:**
+  - implementa la interfaz Producto.
+- **Creador:**
+  - declara el método de fabricación, el cual devuelve una variable de tipo Producto. También puede definir una implementación predeterminada del método de fabricación que devuelva una variable ProductoConcreto.
+  - puede llamar al método de fabricación para crear una variable Producto.
+- **CreadorConcreto:**
+  - redefine el método de fabricación para devolver una variable de un ProductoConcreto.
+
+### Implementación
+
+- No se observan impedimentos para su implementación en *Go*.
+- En este caso, dado que no existe la herencia de clase en *Go*, el *Creador* sugerido por el patrón debe implementarse en dos partes: a) por un lado los comportamientos abstractos deben definirse en una *Interface*, y b) por otro lado los comportamientos concretos (*el método una operación*) dentro del propio tipo de dato *Creador*.
+- Los *CreadoresConcretos* se componen (*en vez de heredar*) de un *Creador*.
+- Los *CreadoresConcretos* implementan los comportamientos de la *InterfaceCreador*.
+- La principal dificultad de implementar este patrón en *Go* es que existe un comportamiento concreto en *Creador* que invoca a otros comportamientos que no están definidos dentro del propio *Creador* sino que están dentro del *CreadorConcreto* que implementa la *InterfaceCreador*. Esto obliga a que cuando se invoca el comportamiento concreto de *Creador* desde un *CreadorConcreto* se deba pasar una referencia de si mismo para que el comportamiento concreto pueda invocar los comportamientos definidos en la *InterfaceCreador*.
+
+### Código de ejemplo
+
+En este ejemplo queremos contratar personas con diferentes perfiles profesionales. A medida que los postulantes lleguen a la oficina de recursos humanos serán entrevistados (construidos) por diferentes reclutadores especializados.
+
+Implementación:
+
+```go
+// Interface Producto
+type Entrevistador interface {
+    RealizarPreguntas()
+}
+
+// Producto Concreto
+type EntrevistadorIT struct{}
+
+func (e *EntrevistadorIT) RealizarPreguntas() {
+    fmt.Println("¿Nombre 5 patrones de diseño?")
+}
+
+// Producto Concreto
+type EntrevistadorFinanzas struct{}
+
+func (e *EntrevistadorFinanzas) RealizarPreguntas() {
+    fmt.Println("¿Cuál es la alicuota del IVA?")
+}
+
+// Creador Interface
+type RecursosHumanosInterface interface {
+    LlamarEntrevistador() Entrevistador
+}
+
+// Creador Abstracto
+type RecursosHumanos struct{}
+
+func (rh *RecursosHumanos) TomarEntrevista(self RecursosHumanosInterface) {
+    entrevistador := self.LlamarEntrevistador()
+    entrevistador.RealizarPreguntas()
+}
+
+// Creador Concreto
+type RecusosHumanosIT struct {
+    *RecursosHumanos
+}
+
+func (rhi *RecusosHumanosIT) LlamarEntrevistador() Entrevistador {
+    return &EntrevistadorIT{}
+}
+
+// Creador Concreto
+type RecusosHumanosFinanzas struct {
+    *RecursosHumanos
+}
+
+func (rhf *RecusosHumanosFinanzas) LlamarEntrevistador() Entrevistador {
+    return &EntrevistadorFinanzas{}
+}
+```
+
+Se puede probar la implementación del patrón de la siguiente forma:
+
+```go
+fmt.Println("El entrevisatador de IT pregunta:")
+recursosHumanosIT := &RecusosHumanosIT{&RecursosHumanos{}}
+recursosHumanosIT.TomarEntrevista(recursosHumanosIT)
+
+fmt.Println("\nEl entrevisatador de Finanzas pregunta:")
+recursosHumanosFinanzas := &RecusosHumanosFinanzas{&RecursosHumanos{}}
+recursosHumanosFinanzas.TomarEntrevista(recursosHumanosFinanzas)
+```
+
+Ejecutar código: <https://play.golang.org/p/1szkQi-rVUf>
+
+Código de ejemplo: <https://github.com/danielspk/designpatternsingo/tree/master/patrones/creacionales/factorymethod>

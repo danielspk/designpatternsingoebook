@@ -1,0 +1,93 @@
+{pagebreak}
+{#patron_adapter}
+## Adapter
+
+### Propósito
+
+Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Adapter* "convierte la interfaz de una clase en otra interfaz que es la que esperan los clientes. Permite que cooperen clases que de otra forma no podrían por tener interfaces incompatibles".
+
+### También conocido como
+
+*Wrapper* (Envoltorio)
+
+### Estructura
+
+{width: 95.0%}
+![](adapter.png)
+
+### Participantes
+
+- **Objetivo:**
+  - define la interfaz específica del dominio que usa el Cliente.
+- **Cliente:**
+  - colabora con variables que se ajustan a la interfaz Objetivo.
+- **Adaptable:**
+  - define una interfaz existente que necesita ser adaptada.
+- **Adaptador:**
+  - adapta la interfaz de Adaptable a la interfaz Objetivo.
+
+### Implementación
+
+No se observan impedimentos y/o modificaciones de la estructura original del patrón para su implementación en *Go*.
+
+### Código de ejemplo
+
+En este ejemplo queremos que un juego de RPG se pueda adaptar a un nuevo tipo de personaje (*Magos*) que no comparte las mismas características que los guerreros originales (*Elfos*). Para esto es necesario realizar un adaptador para que un *Mago* pueda atacar como un *Elfo*.
+
+Implementación:
+
+```go
+// Objetivo
+type Gerrero interface {
+    UsarArma() string
+}
+
+type Elfo struct{}
+
+func (e *Elfo) UsarArma() string {
+    return "atacando con arco y flecha"
+}
+
+// Adaptable
+type GerreroMagico interface {
+    UsarMagia() string
+}
+
+type Mago struct{}
+
+func (m *Mago) UsarMagia() string {
+    return "atacando con magia"
+}
+
+// Adaptador
+type MagoAdaptador struct {
+    gerrero GerreroMagico
+}
+
+func (ma *MagoAdaptador) UsarArma() string {
+    return ma.gerrero.UsarMagia()
+}
+
+// Cliente
+type Jugador struct {
+    guerrero Gerrero
+}
+
+func (j *Jugador) Atacar() string {
+    return j.guerrero.UsarArma()
+}
+```
+
+Se puede probar la implementación del patrón de la siguiente forma:
+
+```go
+jugadorA := &Jugador{&Elfo{}}
+fmt.Printf("Jugador A: %s\n", jugadorA.Atacar())
+
+jugadorB := &Jugador{&MagoAdaptador{&Mago{}}}
+fmt.Printf("Jugador B: %s\n", jugadorB.Atacar())odos los desarrolladores de la Gerencia es de $%d\n", gerenciaIT.ObtenerSalario())
+```
+
+Ejecutar código: <https://play.golang.org/p/60tlY8la04W>
+
+Código de ejemplo: <https://github.com/danielspk/designpatternsingo/tree/master/patrones/estructurales/adapter>

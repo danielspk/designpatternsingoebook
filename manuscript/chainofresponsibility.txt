@@ -1,0 +1,93 @@
+{pagebreak}
+{#patron_chainofresponsibility}
+## Chain of Responsibility
+
+### Propósito
+
+Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Chain of Responsibility* "evita acoplar el emisor de una petición a su receptor, dando a más de un objeto la posibilidad de responder a la petición. Encadena los objetos receptores y pasa la petición a través de la cadena hasta que es procesada por algún objeto".
+
+### Estructura
+
+{width: 95.0%}
+![](chainofresponsibility.png)
+
+### Participantes
+
+- **Manejador:**
+  - define una interfaz para tratar las peticiones.
+  - *(opcional)* implementa el enlace al sucesor.
+- **ManejadorConcreto:**
+  - trata las peticiones de las que es responsable.
+  - puede acceder a su sucesor.
+  - si el ManejadorConcreto puede manejar la petición, lo hace; en caso contrario la reenvía a su sucesor.
+- **Cliente:**
+  - inicializa la petición a una variable ManejadorConcreto de la cadena.
+
+### Implementación
+
+- No se observan impedimentos para su implementación en *Go*.
+- La implementación de la clase abstracta *Manejador* debe reemplazarse por una interface dado que no existe la herencia de clase en *Go*.
+- Si fuese necesario que *Manejador* implementase código común a los *ManejadoresConcretos* se podrá definir un tipo de dato adicional (*ManejadorComun* por ejemplo) y el mismo deberá implementarse en cada *ManejadorConcreto* mediante el uso de la composición.
+
+### Código de ejemplo
+
+En este ejemplo se definen dos receptores distintos de mensajes. Uno para mensajes de alta prioridad y otro para mensajes de baja prioridad. El mensaje enviado por el cliente es transmitido a través de la cadena de receptores y cada receptor trata o no el mensaje de acuerdo a su prioridad.
+
+Implementación:
+
+```go
+// Interface
+type Receptor interface {
+    ProcesarMensaje(int, string) string
+}
+
+// Receptor de Alta Prioridad
+type ReceptorAltaPrioridad struct{
+    siguiente Receptor
+}
+
+func (rap ReceptorAltaPrioridad) ProcesarMensaje(prioridad int, mensaje string) string {
+    if prioridad >= 5 {
+       return "Procesando mensaje de alta prioridad: " + mensaje
+    }
+
+    if rap.siguiente != nil {
+       return rap.siguiente.ProcesarMensaje(prioridad, mensaje)
+    }
+
+    return ""
+}
+
+// Receptor de Baja Prioridad
+type ReceptorBajaPrioridad struct{
+    siguiente Receptor
+}
+
+func (rbp ReceptorBajaPrioridad) ProcesarMensaje(prioridad int, mensaje string) string {
+    if prioridad < 5 {
+       return "Procesando mensaje de baja prioridad: " + mensaje
+    }
+
+    if rbp.siguiente != nil {
+       return rbp.siguiente.ProcesarMensaje(prioridad, mensaje)
+    }
+
+    return ""
+}
+```
+
+Se puede probar la implementación del patrón de la siguiente forma:
+
+```go
+manejadores := ReceptorBajaPrioridad {
+    siguiente: ReceptorAltaPrioridad {},
+}
+
+fmt.Println(manejadores.ProcesarMensaje(4, "Mensaje 1 - Prioridad 4"))
+fmt.Println(manejadores.ProcesarMensaje(5, "Mensaje 2 - Prioridad 5"))
+fmt.Println(manejadores.ProcesarMensaje(10, "Mensaje 3 - Prioridad 10"))
+```
+
+Ejecutar código: <https://play.golang.org/p/TnwdRltyBds>
+
+Código de ejemplo: <https://github.com/danielspk/designpatternsingo/tree/master/patrones/comportamiento/chainofresponsibility>

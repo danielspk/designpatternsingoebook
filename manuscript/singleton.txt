@@ -1,0 +1,75 @@
+{pagebreak}
+{#patron_singleton}
+## Singleton
+
+### Propósito
+
+Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Singleton* "garantiza que una clase solo tenga una instancia, y proporciona un punto de acceso global a ella".
+
+### Estructura
+
+{width: 95.0%}
+![](singleton.png)
+
+### Participantes
+
+- **Singleton:**
+  - define una operación *instancia* que permite que los clientes accedan a su única variable.
+  - puede ser responsable de crear su única variable en memoria.
+
+### Implementación
+
+- No se observan impedimentos para la implementación del patrón en *Go*.
+- Al no existir método y propiedades estáticas en *Go* es necesario utilizar programación funcional para poder implementar el patrón.
+- Dado que *Go* permite la programación concurrente en diferentes subprocesos de ejecución, no es posible garantizar una única variable del tipo de dato si no se toman recaudos adicionales. Para asegurar que solo existirá una variable del tipo de dato se deberá hacer uso de la librería estándar `sync` (<https://golang.org/pkg/sync/>) de *Go*. Concretamente el método `Do` (<https://golang.org/pkg/sync/#Once.Do>) de la estructura `Once` (<https://golang.org/pkg/sync/#Once>) garantiza que la función pasada como parámetro puede ser ejecutada una única vez mientras dure la ejecución del programa. Esta función será la encargada de crear la única variable del tipo de dato *Singleton*.
+
+### Código de ejemplo
+
+Implementación:
+
+```go
+// Singleton
+type Singleton struct {
+    Tiempo int64
+}
+
+// Creador "estático"
+var instancia *Singleton
+var once sync.Once
+
+func GetInstancia() *Singleton {
+    once.Do(func() {
+        instancia = &Singleton{
+            time.Now().Unix(),
+        }
+    })
+
+    return instancia
+}
+```
+
+Se puede probar la implementación del patrón de la siguiente forma:
+
+```go
+fmt.Println("Todas las instancias Singleton tienen que tener el mismo número")
+
+fmt.Printf("Instancia Singleton: %d\n", GetInstancia().Tiempo)
+
+time.Sleep(1 * time.Second)
+
+fmt.Printf("Instancia Singleton: %d\n", GetInstancia().Tiempo)
+
+canalEspera := make(chan int64)
+
+go func() {
+    time.Sleep(1 * time.Second)
+
+    canalEspera <- GetInstancia().Tiempo
+}()
+
+fmt.Printf("Instancia Singleton: %d\n", <-canalEspera)
+```
+
+Ejecutar código: <https://play.golang.org/p/Fae3WyvrdIf>
+
+Código de ejemplo: <https://github.com/danielspk/designpatternsingo/tree/master/patrones/creacionales/singleton>
