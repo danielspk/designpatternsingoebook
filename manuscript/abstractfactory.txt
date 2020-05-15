@@ -12,7 +12,7 @@ Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Abstract F
 
 ### Estructura
 
-{width: 95.0%}
+{width: 100.0%}
 ![](abstractfactory.png)
 
 ### Participantes

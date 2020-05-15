@@ -12,7 +12,7 @@ Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Adapter* "
 
 ### Estructura
 
-{width: 95.0%}
+{width: 92.0%}
 ![](adapter.png)
 
 ### Participantes
@@ -85,7 +85,7 @@ jugadorA := &Jugador{&Elfo{}}
 fmt.Printf("Jugador A: %s\n", jugadorA.Atacar())
 
 jugadorB := &Jugador{&MagoAdaptador{&Mago{}}}
-fmt.Printf("Jugador B: %s\n", jugadorB.Atacar())odos los desarrolladores de la Gerencia es de $%d\n", gerenciaIT.ObtenerSalario())
+fmt.Printf("Jugador B: %s\n", jugadorB.Atacar())
 ```
 
 Ejecutar código: <https://play.golang.org/p/60tlY8la04W>

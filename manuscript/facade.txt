@@ -8,7 +8,7 @@ Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Facade* "p
 
 ### Estructura
 
-{width: 95.0%}
+{width: 80.0%}
 ![](facade.png)
 
 ### Participantes

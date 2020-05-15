@@ -8,7 +8,7 @@ Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Mediator* 
 
 ### Estructura
 
-{width: 95.0%}
+{width: 85.0%}
 ![](mediator.png)
 
 ### Participantes

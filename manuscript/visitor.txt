@@ -24,12 +24,12 @@ Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Visitor* "
 - **EstructuradDeObjeto:**
   - puede enumerar sus elementos.
   - puede proporcionar una interfaz de alto nivel para permitir al visitante visitar a sus elementos.
-  - puede ser un [Composite](../estructurales/composite.md) o una colección, como una lista o un conjunto.
+  - puede ser un [Composite](#patron_composite) o una colección, como una lista o un conjunto.
 
 ### Implementación
 
 - No se observan impedimentos y/o modificaciones de la estructura original del patrón para su implementación en *Go*.
-- Dado que *Go* no soporta sobrecarga de método, y a fin de facilitar el ejemplo sin hacer uso de la [reflexión](https://golang.org/pkg/reflect/), los visitantes dispondan de diferentes comportamientos para cada tipo de elemento variando los nombres de sus funciones.
+- Dado que *Go* no soporta sobrecarga de método, y a fin de facilitar el ejemplo sin hacer uso de la *reflexión* (<https://golang.org/pkg/reflect/>), los visitantes dispondan de diferentes comportamientos para cada tipo de elemento variando los nombres de sus funciones.
 - Se omite del código de ejemplo *EstructuraDeObjeto* dado que solo sería una colección que acepta elementos.
 
 ### Código de ejemplo

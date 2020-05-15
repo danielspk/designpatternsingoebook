@@ -8,7 +8,7 @@ Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Template M
 
 ### Estructura
 
-{width: 95.0%}
+{width: 70.0%}
 ![](templatemethod.png)
 
 ### Participantes

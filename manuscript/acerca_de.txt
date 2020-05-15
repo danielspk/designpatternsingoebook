@@ -1,6 +1,6 @@
 # Acerca De
 
-## Motivación
+### Motivación
 
 Esta publicación fue motivada como trabajo final de mi Posgrado de Especialización en Ingeniería del Software que curse durante el año 2017 en la *UCA - Pontificia Universidad Católica Argentina* [\[53\]](#recursos).
 
@@ -142,7 +142,7 @@ La motivación de la elección de estas, y no otras herramientas, fue la siguien
 - Para la generación de diagramas UML se analizaron otras alternativas a *Violet UML* como: **a)** *StarUML*, **b)** *Diagram Designer*, y **c)** *ModelioSoft*. Sin embargo la elección fue *Violet UML* ya que se encuentra disponible para varios Sistemas Operativos y es muy simple de aprender dado que no tiene demasiadas opciones y tipos de diagramas disponibles. La única restricción importante que presento este software es la falta de estilos que imposibilita estereotipar con cursiva a aquellas clases que son abstractas.
 - Para la ejecución online de código de ejemplo en *Go* no analice otras alternativas ya que *Go Playgroung* es la herramienta oficial de *Go* y se encuentra muy popularizada en su comunidad.
 
-## Agradecimientos
+### Agradecimientos
 
 Quisiera concluir agradeciendo a:
 

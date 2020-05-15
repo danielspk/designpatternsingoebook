@@ -7,7 +7,7 @@ C> *Imagen* - [\[49\]](#recursos)
 
 A continuación se exponen los recursos de interés que fueron utilizados como referencia para el desarrollo de esta publicación.
 
-## Golang
+### Golang
 
 [\[1\]](https://golang.org/) - Web oficial
 [\[2\]](https://golang.org/doc/) - Documentación oficial
@@ -15,7 +15,7 @@ A continuación se exponen los recursos de interés que fueron utilizados como r
 [\[4\]](https://play.golang.org/) - Consola interactiva
 [\[5\]](https://blog.golang.org/) - Blog oficial
 
-## Artículos Web
+### Artículos Web
 
 [\[6\]](https://code.tutsplus.com/tutorials/lets-go-object-oriented-programming-in-golang--cms-26540) - Let's Go: Object-Oriented Programming in Golang
 [\[7\]](https://dave.cheney.net/2016/08/20/solid-go-design) - SOLID Go Design
@@ -30,12 +30,12 @@ A continuación se exponen los recursos de interés que fueron utilizados como r
 [\[16\]](https://github.com/ksimka/go-is-not-good) - Go is not good
 [\[17\]](https://talks.golang.org/2012/splash.article) - Go at Google: Language Design in the Service of Software Engineering
 
-## Papers
+### Papers
 
 [\[18\]](https://github.com/golang/go/wiki/ResearchPapers) - Publicaciones académicas
 [\[19\]](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.188.5524&rep=rep1&type=pdf) - GoHotDraw: Evaluating the Go Programming Language with Design Patterns - Frank Schmager, Nicholas Cameron, James Noble
 
-## Libros
+### Libros
 
 [\[20\]](https://github.com/karlseguin/the-little-go-book) - Karl Seguin, "The Litte Go Book", 2014
 [\[21\]](https://www.amazon.com/Data-Structures-Algorithms-Hemant-Jain-ebook/dp/B075TBM9KS) - Hemant Jain, "Data Structures & Algorithms In Go" - WOW, 2017
@@ -60,7 +60,7 @@ A continuación se exponen los recursos de interés que fueron utilizados como r
 [\[40\]](https://www.amazon.es/Software-Development-Principles-Patterns-Practices/dp/0135974445) - Robert C. Martin, "Agile Software Development, Principles, Patterns, and Practices" - Alan Apt Series, 2002
 [\[41\]](http://shop.oreilly.com/product/0636920046516.do) - Caleb Doxsey, "Introducing Go" - O'Reilly, 2016
 
-## Presentaciones
+### Presentaciones
 
 [\[42\]](https://talks.golang.org/2014/go4java.slide#1) - Go for Javaneros
 [\[43\]](https://www.youtube.com/watch?v=rFejpH_tAHM) - Rob Pike - Simplicity is Complicated
@@ -69,7 +69,7 @@ A continuación se exponen los recursos de interés que fueron utilizados como r
 [\[46\]](https://www.youtube.com/watch?v=zzAdEt3xZ1M) - Dave Cheney - SOLID Go Design
 [\[47\]](https://www.youtube.com/watch?v=194blNHDdd0) - William Kennedy - Golang OOP - Composition in Go
 
-## Otros Recursos
+### Otros Recursos
 
 [\[48\]](https://github.com/avelino/awesome-go) - Librerías, paquetes y framewoks
 [\[49\]](https://golang.org/doc/gopher/) - Gophers oficiales
