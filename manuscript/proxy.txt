@@ -30,7 +30,7 @@ Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Proxy* "pr
 - **SujetoReal:**
   - define la variable real representada.
 
-## Implementación
+### Implementación
 
 No se observan impedimentos y/o modificaciones de la estructura original del patrón para su implementación en *Go*.
 
