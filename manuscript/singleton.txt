@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Singleton* "garantiza que una clase solo tenga una instancia, y proporciona un punto de acceso global a ella".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Singleton* "garantiza que una clase solo tenga una instancia, y proporciona un punto de acceso global a ella".
 
 ### Estructura
 

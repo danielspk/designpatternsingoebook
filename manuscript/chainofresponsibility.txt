@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Chain of Responsibility* "evita acoplar el emisor de una petición a su receptor, dando a más de un objeto la posibilidad de responder a la petición. Encadena los objetos receptores y pasa la petición a través de la cadena hasta que es procesada por algún objeto".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Chain of Responsibility* "evita acoplar el emisor de una petición a su receptor, dando a más de un objeto la posibilidad de responder a la petición. Encadena los objetos receptores y pasa la petición a través de la cadena hasta que es procesada por algún objeto".
 
 ### Estructura
 

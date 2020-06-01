@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Template Method* "define en una operación el esqueleto de un algoritmo, delegando en las subclases algunos de sus pasos. Permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar su estructura".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Template Method* "define en una operación el esqueleto de un algoritmo, delegando en las subclases algunos de sus pasos. Permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar su estructura".
 
 ### Estructura
 

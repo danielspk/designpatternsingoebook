@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Observer* "define una dependencia de uno-a-muchos entre objetos, de forma que cuando un objeto cambie de estado se notifique y se actualicen automáticamente todos los objetos que depende de él".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Observer* "define una dependencia de uno-a-muchos entre objetos, de forma que cuando un objeto cambie de estado se notifique y se actualicen automáticamente todos los objetos que depende de él".
 
 ### También conocido como
 

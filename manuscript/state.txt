@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *State* "permite que un objeto modifique su comportamiento cada vez que cambie su estado interno. Parecerá que cambia la clase del objeto".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *State* "permite que un objeto modifique su comportamiento cada vez que cambie su estado interno. Parecerá que cambia la clase del objeto".
 
 ### También conocido como
 

@@ -5,7 +5,7 @@
 ![](doc.png)
 C> *Imagen* - [\[49\]](#recursos)
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) los patrones estructurales "se ocupan de cómo se combinan las clases y los objetos para formar estructuras más grandes. Los patrones estructurales de *clases* hacen uso de la herencia para componer interfaces o implementaciones."
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) los patrones estructurales "se ocupan de cómo se combinan las clases y los objetos para formar estructuras más grandes. Los patrones estructurales de *clases* hacen uso de la herencia para componer interfaces o implementaciones."
 
 ### Contenido
 

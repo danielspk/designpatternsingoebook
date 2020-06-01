@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Proxy* "proporciona un representante o sustituto de otro objeto para controlar el acceso a este".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Proxy* "proporciona un representante o sustituto de otro objeto para controlar el acceso a este".
 
 ### También conocido como
 

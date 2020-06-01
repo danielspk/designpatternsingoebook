@@ -8,7 +8,7 @@ Este apartado tratará sobre ***¿Qué es un Patrón de Diseño?*** y ***¿Qué 
 
 ### Patrones de Diseño
 
-En el libro de Erich Gamma et al - "Patrones de Diseño" [\[38\]](#recursos) - exponen la importancia y usos de los patrones de diseño en conceptos como:
+En el libro de Erich Gamma et al - *Patrones de Diseño* [\[38\]](#recursos) - exponen la importancia y usos de los patrones de diseño en conceptos como:
 
 - "Diseñar software orientado a objetos es difícil, y aún lo es más diseñar software orientado a objetos reutilizable".
 - "Algo que los expertos saben que no hay que hacer es resolver cada problema partiendo de cero. Por el contrario, reutilizan soluciones que ya les han sido útiles en el pasado. Cuando encuentran una solución buena, la usan una y otra vez".

@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Memento* "representa y externaliza el estado interno de un objeto sin violar la encapsulación, de forma que este puede volver a dicho estado más tarde".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Memento* "representa y externaliza el estado interno de un objeto sin violar la encapsulación, de forma que este puede volver a dicho estado más tarde".
 
 ### También conocido como
 

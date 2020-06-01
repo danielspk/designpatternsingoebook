@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Flyweight* "usa comportamiento para permitir un gran número de objetos de grano fino de forma eficiente".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Flyweight* "usa comportamiento para permitir un gran número de objetos de grano fino de forma eficiente".
 
 ### Estructura
 

@@ -5,7 +5,7 @@
 ![](doc.png)
 C> *Imagen* - [\[49\]](#recursos)
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) los patrones de creación "abstraen el proceso de creación de instancias. Ayudan a hacer un sistema independiente de cómo se crean, se componen y se representan sus objetos. Un patrón de creación de clases usa la herencia para cambiar la clase de la instancia a crear, mientras que un patrón de creación de objetos delega la creación de la instancia en otro objeto."
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) los patrones de creación "abstraen el proceso de creación de instancias. Ayudan a hacer un sistema independiente de cómo se crean, se componen y se representan sus objetos. Un patrón de creación de clases usa la herencia para cambiar la clase de la instancia a crear, mientras que un patrón de creación de objetos delega la creación de la instancia en otro objeto."
 
 Esta definición de Gamma et al es un desafío de representar en *Go* ya que como hemos visto no existen ni *clases*, ni sus *instancias*, ni *objetos* y ni la *herencia de clase*. Sin embargo veremos como todo encaja en su lugar en cada patrón y cómo pueden implementarse en *Go*.
 

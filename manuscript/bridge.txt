@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Bridge* "desacopla una abstracción de su implementación, de modo que ambas puedan variar de forma independiente".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Bridge* "desacopla una abstracción de su implementación, de modo que ambas puedan variar de forma independiente".
 
 ### También conocido como
 

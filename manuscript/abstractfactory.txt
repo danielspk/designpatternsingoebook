@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Abstract Factory* "proporciona una interfaz para crear familias de objetos relacionados o que dependen entre sí, sin especificar sus clases concretas".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Abstract Factory* "proporciona una interfaz para crear familias de objetos relacionados o que dependen entre sí, sin especificar sus clases concretas".
 
 ### También conocido como
 

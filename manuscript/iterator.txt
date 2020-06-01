@@ -4,7 +4,7 @@
 
 ### Propósito
 
-Según el libro "Patrones de Diseño" [\[38\]](#recursos) el patrón *Iterator* "proporciona un modo de acceder secuencialmente a los elementos de un objeto agregado sin exponer su representación interna".
+Según el libro *Patrones de Diseño* [\[38\]](#recursos) el patrón *Iterator* "proporciona un modo de acceder secuencialmente a los elementos de un objeto agregado sin exponer su representación interna".
 
 ### También conocido como
 
