@@ -12,6 +12,6 @@ La tercera y última parte está destinada a las conclusiones generales y a los 
 
 {width: 36.0%}
 ![](gologofuchsia.png)
-C> *Figura* - Logo oficial del Lenguaje *Go* [^logo]
+C> *Figura:* Logo oficial del Lenguaje *Go* [^introduccion_footnotes_1]
 
-[^logo]: Fuente: https://golang.org/s/logos - [\[52\]](#recursos)
+[^introduccion_footnotes_1]: Fuente: https://golang.org/s/logos - Recurso: [\[52\]](#recursos)
