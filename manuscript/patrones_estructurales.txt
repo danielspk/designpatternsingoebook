@@ -3,7 +3,7 @@
 
 {width: 13.0%}
 ![](doc.png)
-C> *Imagen* - [\[49\]](#recursos)
+C> *Figura:* Gopher - Mascota del Lenguaje *Go* [^patrones_estructurales_footnotes_1]
 
 Según el libro *Patrones de Diseño* [\[38\]](#recursos) los patrones estructurales "se ocupan de cómo se combinan las clases y los objetos para formar estructuras más grandes. Los patrones estructurales de *clases* hacen uso de la herencia para componer interfaces o implementaciones."
 
@@ -16,3 +16,5 @@ Según el libro *Patrones de Diseño* [\[38\]](#recursos) los patrones estructur
 - [Decorator](#patron_decorator)
 - [Facade](#patron_facade)
 - [Flyweight](#patron_flyweight)
+
+[^patrones_estructurales_footnotes_1]: Fuente: <https://golang.org/doc/gopher> | Recurso: [#49](#recursos)

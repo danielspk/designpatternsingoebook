@@ -2,7 +2,7 @@
 
 {width: 22.0%}
 ![](project.png)
-C> *Imagen* - [\[49\]](#recursos)
+C> *Figura:* Gopher - Mascota del Lenguaje *Go* [^poo_en_go_footnotes_1]
 
 Este apartado tratará de dar respuesta a la siguiente pregunta: **¿Es *Go* un lenguaje orientado a objetos?**.
 
@@ -11,3 +11,5 @@ Este apartado tratará de dar respuesta a la siguiente pregunta: **¿Es *Go* un 
 - [Objetos en *Go*](#poo_objetos)
 - [Herencia vs Composición en *Go*](#poo_herencia)
 - [Principios S.O.L.I.D en *Go*](#poo_solid)
+
+[^poo_en_go_footnotes_1]: Fuente: <https://golang.org/doc/gopher> | Recurso: [#49](#recursos)

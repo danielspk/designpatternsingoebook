@@ -2,7 +2,7 @@
 
 {width: 13.0%}
 ![](pkg.png)
-C> *Imagen* - [\[49\]](#recursos)
+C> *Figura:* Gopher - Mascota del Lenguaje *Go* [^patrones_footnotes_1]
 
 Este apartado tratará sobre ***¿Qué es un Patrón de Diseño?*** y ***¿Qué es GoF?***.
 
@@ -25,3 +25,5 @@ En las siguientes secciones se detallará como es posible implementar dichos pat
 - [Patrones de Comportamiento](#patrones_comportamiento)
 - [Patrones Creacionales](#patrones_creacionales)
 - [Patrones Estructurales](#patrones_estructurales)
+
+[^patrones_footnotes_1]: Fuente: <https://golang.org/doc/gopher> | Recurso: [#49](#recursos)

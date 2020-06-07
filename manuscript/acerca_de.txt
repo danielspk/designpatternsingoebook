@@ -6,7 +6,7 @@ Esta publicación fue motivada como trabajo final de mi Posgrado de Especializac
 
 {width: 36.0%}
 ![](uca.png)
-C> *Imagen* - [\[53\]](#recursos)
+C> *Figura:* Logo de Pontificia Universidad Católica Argentina [^acerca_de_footnotes_1]
 
 A lo largo de los últimos 10 años vengo desarrollando software principalmente orientado a objetos. En uno de mis últimos proyectos debimos analizar un cambio en el lenguaje de programación que utilizábamos porque uno de los principales atributos de calidad que debía cumplir el nuevo software era la eficiencia; por esto era fundamental que el software fuera lo más rápido posible. Si bien es un análisis muy pobre el analizar que tan rápido puede ser un software únicamente mirando con que lenguaje de programación es desarrollado, esta era una oportunidad que como equipo teníamos para explorar nuevos lenguajes. Luego de varias pruebas y discusiones quedaron dos candidatos finales: *Go* (<https://golang.org/>) y *Rust* (<https://www.rust-lang.org/en-US/>). La paradoja de esta historia es que al final el proyecto se terminó realizando en *Node.js* (<https://nodejs.org/en/>). Las razones escapan a esta publicación, sin embargo una de ellas tuvo un fuerte impacto es esa decisión: *"cómo transferir el conocimiento orientado a objetos que posee el grupo de desarrolladores a estos lenguajes que no son puramente orientados a objetos, o no de igual manera como lo conocen los desarrolladores de Java, C\#, PHP, etc"*. Anteriormente decía que la elección de *Node.js* fue una paradoja porque quien alguna vez ha desarrollado en *Javascript* sabrá las limitaciones que posee su orientación a objetos y de las grandes discusiones que hay en la comunidad sobre si *Javascript* es realmente un lenguaje orientado a objetos u orientado a prototipos. Esta es la razón principal de esta publicación, la de poder ayudar a un futuro equipo de tecnología a que puedan visualizar como es la Programación Orientada a Objetos en *Go* partiendo de los ya clásicos Patrones de Diseño GoF.
 
@@ -151,3 +151,5 @@ Quisiera concluir agradeciendo a:
 - al cuerpo docente por su alto nivel académico y la predisposición para transmitir sus conocimientos.
 - a mi tutor de trabajo final por su compromiso, sus consejos y acompañamiento durante la realización de este trabajo.
 - a mis seres queridos por apoyarme en este viaje a pesar del tiempo que no les pude dedicar.
+
+[^acerca_de_footnotes_1]: Fuente: <http://uca.edu.ar> | Recurso: [#53](#recursos)

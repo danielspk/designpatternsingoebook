@@ -3,7 +3,7 @@
 
 {width: 13.0%}
 ![](doc.png)
-C> *Imagen* - [\[49\]](#recursos)
+C> *Figura:* Gopher - Mascota del Lenguaje *Go* [^patrones_creacionales_footnotes_1]
 
 Según el libro *Patrones de Diseño* [\[38\]](#recursos) los patrones de creación "abstraen el proceso de creación de instancias. Ayudan a hacer un sistema independiente de cómo se crean, se componen y se representan sus objetos. Un patrón de creación de clases usa la herencia para cambiar la clase de la instancia a crear, mientras que un patrón de creación de objetos delega la creación de la instancia en otro objeto."
 
@@ -22,3 +22,5 @@ Sin embargo, se realizará una mención especial en la explicación del patrón 
 - [Factory Method](#patron_factorymethod)
 - [Abstract Factory](#patron_abstractfactory)
 - [Prototype](#patron_prototype)
+
+[^patrones_creacionales_footnotes_1]: Fuente: <https://golang.org/doc/gopher> | Recurso: [#49](#recursos)

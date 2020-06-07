@@ -2,7 +2,7 @@
 
 {width: 28.5%}
 ![](appenginegopher.jpg)
-C> *Imagen* - [\[49\]](#recursos)
+C> *Figura:* Gopher - Mascota del Lenguaje *Go* [^sobre_go_footnotes_1]
 
 "*Go* es un lenguaje de programación de código abierto que facilita la creación de software simple, confiable y eficiente". [\[1\]](#recursos)
 
@@ -14,7 +14,7 @@ C> *Imagen* - [\[49\]](#recursos)
 
 {width: 24.0%}
 ![](gopher.png)
-C> *Imagen* - [\[50\]](#recursos)
+C> *Figura:* Gopher - Mascota del Lenguaje *Go* [^sobre_go_footnotes_2]
 
 Su lanzamiento oficial fue en noviembre del año 2009, pero su primera versión estable - 1.0 - recién se publicó en marzo de 2012.
 
@@ -44,7 +44,7 @@ Por sus características suele clasificarse como un lenguaje compilado que tiene
 
 {width: 33.0%}
 ![](govsother.png)
-C> *Imagen* - [\[25\]](#recursos)
+C> *Figura:* Características del Lenguaje *Go* [^sobre_go_footnotes_3]
 
 Para *Rob Pike*: "*Go* es un intento de combinar la seguridad y el rendimiento de un lenguaje de tipado estático con la expresividad y la comodidad de un lenguaje interpretado de tipo dinámico." [\[25\]](#recursos)
 
@@ -124,3 +124,7 @@ A continuación se exponen solo algunos de estos proverbios:
 - No solo revise los errores, trátelos con gracia.
 
 Puede acceder al listado completo y actualizado en <https://go-proverbs.github.io>.
+
+[^sobre_go_footnotes_1]: Fuente: <https://golang.org/doc/gopher> | Recurso: [#49](#recursos)
+[^sobre_go_footnotes_2]: Fuente: <https://github.com/golang-samples/gopher-vector> | Recurso: [#50](#recursos)
+[^sobre_go_footnotes_3]: Fuente: Vladimir Vivien, Mario Castro Contreras, Mat Ryer, "Go: Design Patterns for Real-World Projects" - Packt, 2017 | Recurso: [#25](#recursos)
