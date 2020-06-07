@@ -72,16 +72,22 @@ A continuación se exponen los recursos de interés que fueron utilizados como r
 ### Otros Recursos
 
 \[48\] - Librerías, paquetes y framewoks de *Go*
-Fuente: <https://github.com/avelino/awesome-go>
+*Fuente: <https://github.com/avelino/awesome-go>*
+
 \[49\] - Gophers oficiales
-Fuente: <https://golang.org/doc/gopher>
+*Fuente: <https://golang.org/doc/gopher>*
+
 \[50\] - Gophers libres
-Fuente: <https://github.com/golang-samples/gopher-vector>
+*Fuente: <https://github.com/golang-samples/gopher-vector>*
+
 \[51\] - Índice Tiobe
-Fuente: <https://www.tiobe.com/tiobe-index>
+*Fuente: <https://www.tiobe.com/tiobe-index>*
+
 \[52\] - Logos oficiales de *Go*
-Fuente: <https://golang.org/s/logos>
+*Fuente: <https://golang.org/s/logos>*
+
 \[53\] - UCA - Pontificia Universidad Católica Argentina
-Fuente: <http://uca.edu.ars>
+*Fuente: <http://uca.edu.ars>*
+
 \[54\] - Python - Glosario
-Fuente: <https://docs.python.org/3/glossary.html?highlight=duck#term-duck-typing>
+*Fuente: <https://docs.python.org/3/glossary.html?highlight=duck#term-duck-typing>*
