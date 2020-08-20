@@ -155,5 +155,5 @@ Quisiera concluir agradeciendo a:
 - a mis seres queridos por apoyarme en este viaje a pesar del tiempo que no les pude dedicar.
 
 [^acerca_de_footnotes_1]: Fuente: <http://uca.edu.ar>
-[^acerca_de_footnotes_2]: Fuente: <https://www.tiobe.com/tiobe-index>
+[^acerca_de_footnotes_2]: Fuente: <https://www.tiobe.com/tiobe-index/go/>
 [^acerca_de_footnotes_3]: Fuente: <https://www.tiobe.com/tiobe-index>
