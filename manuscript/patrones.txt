@@ -26,4 +26,4 @@ En las siguientes secciones se detallará como es posible implementar dichos pat
 - [Patrones Creacionales](#patrones_creacionales)
 - [Patrones Estructurales](#patrones_estructurales)
 
-[^patrones_footnotes_1]: Fuente: <https://golang.org/doc/gopher> | Recurso: [#49](#recursos)
+[^patrones_footnotes_1]: Fuente: <https://golang.org/doc/gopher>

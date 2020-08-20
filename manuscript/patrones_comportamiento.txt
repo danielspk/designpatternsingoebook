@@ -21,4 +21,4 @@ Según el libro *Patrones de Diseño* [\[38\]](#recursos) los patrones de compor
 - [Mediator](#patron_mediator)
 - [Observer](#patron_observer)
 
-[^patrones_comportamiento_footnotes_1]: Fuente: <https://golang.org/doc/gopher> | Recurso: [#49](#recursos)
+[^patrones_comportamiento_footnotes_1]: Fuente: <https://golang.org/doc/gopher>

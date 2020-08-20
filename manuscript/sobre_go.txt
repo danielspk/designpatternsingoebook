@@ -125,6 +125,6 @@ A continuación se exponen solo algunos de estos proverbios:
 
 Puede acceder al listado completo y actualizado en <https://go-proverbs.github.io>.
 
-[^sobre_go_footnotes_1]: Fuente: <https://golang.org/doc/gopher> | Recurso: [#49](#recursos)
-[^sobre_go_footnotes_2]: Fuente: <https://github.com/golang-samples/gopher-vector> | Recurso: [#50](#recursos)
-[^sobre_go_footnotes_3]: Fuente: Vladimir Vivien, Mario Castro Contreras, Mat Ryer, "Go: Design Patterns for Real-World Projects" - Packt, 2017 | Recurso: [#25](#recursos)
+[^sobre_go_footnotes_1]: Fuente: <https://golang.org/doc/gopher>
+[^sobre_go_footnotes_2]: Fuente: <https://github.com/golang-samples/gopher-vector>
+[^sobre_go_footnotes_3]: Fuente: Vladimir Vivien, Mario Castro Contreras, Mat Ryer, "Go: Design Patterns for Real-World Projects" - Packt, 2017

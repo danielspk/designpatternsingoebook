@@ -34,11 +34,13 @@ Como se puede apreciar en la siguiente gráfica *(Mayo/2018)* *Go* obtuvo su mej
 
 {width: 90.0%}
 ![](rankinggo.png)
+C> *Figura:* Evolución de la popularidad de *Go* [^acerca_de_footnotes_2]
 
 Actualmente *(Mayo/2018)* *Go* se ubica en la 14ª posición:
 
 {width: 90.0%}
 ![](indextiobe201805.png)
+C> *Figura:* Ranking de popularidad de *Go* [^acerca_de_footnotes_3]
 
 Por el contrario *Rust* se ubica actualmente *(Mayo/2018)* en la 91ª posición en una clara caída dentro del ranking. Si bien por su posición actual sus estadísticas ya no se publican dentro del índice Tiobe, al momento de su evaluación estaba dentro del ranking de los 20ª a 50ª.
 
@@ -152,4 +154,6 @@ Quisiera concluir agradeciendo a:
 - a mi tutor de trabajo final por su compromiso, sus consejos y acompañamiento durante la realización de este trabajo.
 - a mis seres queridos por apoyarme en este viaje a pesar del tiempo que no les pude dedicar.
 
-[^acerca_de_footnotes_1]: Fuente: <http://uca.edu.ar> | Recurso: [#53](#recursos)
+[^acerca_de_footnotes_1]: Fuente: <http://uca.edu.ar>
+[^acerca_de_footnotes_2]: Fuente: <https://www.tiobe.com/tiobe-index>
+[^acerca_de_footnotes_3]: Fuente: <https://www.tiobe.com/tiobe-index>

@@ -23,4 +23,4 @@ Sin embargo, se realizará una mención especial en la explicación del patrón 
 - [Abstract Factory](#patron_abstractfactory)
 - [Prototype](#patron_prototype)
 
-[^patrones_creacionales_footnotes_1]: Fuente: <https://golang.org/doc/gopher> | Recurso: [#49](#recursos)
+[^patrones_creacionales_footnotes_1]: Fuente: <https://golang.org/doc/gopher>
