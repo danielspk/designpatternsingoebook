@@ -243,7 +243,7 @@ func (b BotonIcono) OnDobleClick() {
 }
 ```
 
-Ejecutar código: <https://play.golang.org/p/umwCkd0*eKQ>
+Ejecutar código: <https://play.golang.org/p/umwCkd0_eKQ>
 
 **¿Qué pasa en *Go*:** En *Go* puede aplicarse este concepto aislando el comportamiento requerido utilizando interfaces más pequeñas.
 
